@@ -1,0 +1,19 @@
+/* Custom global styles complementing Bootstrap */
+:root {
+  --itsma-primary: #0d6efd;
+  --itsma-dark: #0f172a;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0d6efd 100%);
+}
