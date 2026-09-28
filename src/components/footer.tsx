@@ -1,24 +1,37 @@
+
 import React from 'react'
 import Icon from './svgs/icon/icon'
 import { FaFacebookSquare, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
+import Link from 'next/link'
 
 function Footer() {
+    const links = [
+        { name: "Inicio", path: "/" },
+        { name: "Nosotros", path: "/Nosotros" },
+        { name: "Servicios", path: "/Servicios" },
+        { name: "Clientes", path: "/Clientes" },
+        { name: "Contacto", path: "/Contacto" },
+    ]
     return (
         <footer className="px-4 w-100">
             <div className="row">
                 <div className="mb-3 py-2 col-6 col-md-3">
-                    <Icon />
+                    <div className='w-25'>
+                        <Icon />
+                    </div>
                     <p className='py-2'>lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique molestias vitae repellendus! </p>
                 </div>
                 <div className="gap-2 mb-3 py-2 col-6 col-md-3">
                     <h5>Links</h5>
                     <ul className="flex-column nav">
-                        <li className="mb-2 nav-item"><a href="#" className="p-0 text-body-secondary nav-link">Inicio</a></li>
-                        <li className="mb-2 nav-item"><a href="#" className="p-0 text-body-secondary nav-link">Nosotros</a></li>
-                        <li className="mb-2 nav-item"><a href="#" className="p-0 text-body-secondary nav-link">Servicios</a></li>
-                        <li className="mb-2 nav-item"><a href="#" className="p-0 text-body-secondary nav-link">Clientes</a></li>
-                        <li className="mb-2 nav-item"><a href="#" className="p-0 text-body-secondary nav-link">Contacto</a></li>
+                        {
+                            links.map((link) =>
+                                <li className="mb-2 nav-item" key={link.name}>
+                                    <Link href={link.path} className="p-0 text-body-secondary nav-link">{link.name}</Link>
+                                </li>
+                            )
+                        }
                     </ul>
                 </div>
                 <div className="gap-2 mb-3 py-2 col-6 col-md-3">
