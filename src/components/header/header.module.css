@@ -1,0 +1,22 @@
+.bgBlur{
+    background-color: #ffffff90;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.sizeIcon{
+    height: 3rem;
+    width: 3rem;
+}
+.currentPageLink {
+    /* color:#f0c !important */
+    /* color: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%) ; */
+    background: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    scale:105%;
+      transition: all;
+    transition-duration: 200ms;
+
+}
