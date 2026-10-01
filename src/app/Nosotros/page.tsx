@@ -2,6 +2,8 @@ import Hero from "@/components/hero/Hero"
 import styles from "./page.module.css"
 import Valores from "@/components/valores/Valores"
 import ImportanPeople from "@/components/ImportantPeople/ImportanPeople"
+import Divider from "@/components/divider/Divider"
+import Certification from "@/components/certification/Certification"
 
 function Nosotros() {
     const values = [
@@ -30,8 +32,23 @@ function Nosotros() {
             description: "Responsable del desarrollo y liderazgo de las soluciones de consultoría, optimización de procesos y metodología Lean de ITSMA."
         },
     ]
+    const certifications = [
+        {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPDLKoe7276H3OurclEPKM43LxJFcbaX8it4xqtcp7lh1i5fnwEHl8zao&s=10",
+            title: "cert 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime animi dicta nihil"
+        },
+        {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPDLKoe7276H3OurclEPKM43LxJFcbaX8it4xqtcp7lh1i5fnwEHl8zao&s=10",
+            title: "cert 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime animi dicta nihil"
+        },
+        {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPDLKoe7276H3OurclEPKM43LxJFcbaX8it4xqtcp7lh1i5fnwEHl8zao&s=10",
+            title: "cert 3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime animi dicta nihil "
+        },
+    ]
     return (
         <section>
+
             <Hero url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" title="Ayudando a empresas" subtitle="en su distribución" />
             <div className="d-flex justify-content-around py-4">
                 {values.map((value) => <Valores key={value.title} title={value.title} text={value.text} />)}
@@ -42,6 +59,23 @@ function Nosotros() {
                 return (
                     <ImportanPeople key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
             })}
+            <div className="d-flex flex-column gap-3 pt-5">
+                <Divider />
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                    <b className="fs-3">¿Como lo hacemos?</b>
+                    <p className={`py-5  text-secondary text-center fs-6 ${styles.pSize}`}>Nos enfocamos en entender lo que necesitás para ofrecerte la solución de embalaje adecuada. Combinamos calidad, experiencia y compromiso para garantizar productos confiables, resistentes y listos para acompañar cada uno de tus proyectos.</p>
+                </div>
+            </div>
+            <div className="d-flex flex-column gap-3 py-5">
+                <Divider />
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                    <b className="fs-3">Certificaciones y más </b>
+                    <div className="d-flex">
+                        {certifications.map((certif) => <Certification key={certif.title} url={certif.url} title={certif.title} />)}
+
+                    </div>
+                </div>
+            </div>
         </section>
     )
 }
