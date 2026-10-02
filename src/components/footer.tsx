@@ -9,9 +9,9 @@ function Footer() {
     const links = [
         { name: "Inicio", path: "/" },
         { name: "Nosotros", path: "/Nosotros" },
-        { name: "Servicios", path: "/Servicios" },
-        { name: "Clientes", path: "/Clientes" },
-        { name: "Contacto", path: "/Contacto" },
+        // { name: "Servicios", path: "/Servicios" },
+        // { name: "Clientes", path: "/Clientes" },
+        // { name: "Contacto", path: "/Contacto" },
     ]
     return (
         <footer className="px-4 w-100">

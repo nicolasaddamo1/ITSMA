@@ -11,9 +11,9 @@ function Header() {
     const links = [
         { name: "Inicio", path: "/" },
         { name: "Nosotros", path: "/Nosotros" },
-        { name: "Servicios", path: "/Servicios" },
-        { name: "Clientes", path: "/Clientes" },
-        { name: "Contacto", path: "/Contacto" },
+        // { name: "Servicios", path: "/Servicios" },
+        // { name: "Clientes", path: "/Clientes" },
+        // { name: "Contacto", path: "/Contacto" },
     ]
     return (
         <div className={`navbar navbar-expand-lg sticky-top ${styles.bgBlur}`}>
