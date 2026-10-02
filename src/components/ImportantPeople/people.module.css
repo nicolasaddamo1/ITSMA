@@ -1,0 +1,9 @@
+.container{
+    background:linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%) !important;
+;
+}
+
+.imageSize{
+    height: 25rem;
+    width: 25rem;
+}
