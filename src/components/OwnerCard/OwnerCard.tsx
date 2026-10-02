@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./people.module.css"
 
-function ImportanPeople({ img, name, title, description, left }: { img: string, name: string, title: string, description: string, left: boolean }) {
+function OwnerCard({ img, name, title, description, left }: { img: string, name: string, title: string, description: string, left: boolean }) {
     return (
         <div className={`d-flex justify-content-around  p-5 rounded-4  my-4 w-100 ${styles.container} ${left ? "flex-row" : "flex-row-reverse"}`}>
             <img src={img} alt={name} className={`rounded-5 ${styles.imageSize}`} />
@@ -14,4 +14,4 @@ function ImportanPeople({ img, name, title, description, left }: { img: string, 
     )
 }
 
-export default ImportanPeople
+export default OwnerCard

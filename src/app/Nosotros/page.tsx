@@ -1,7 +1,7 @@
 import Hero from "@/components/hero/Hero"
 import styles from "./page.module.css"
 import Valores from "@/components/valores/Valores"
-import ImportanPeople from "@/components/ImportantPeople/ImportanPeople"
+import OwnerCard from "@/components/OwnerCard/OwnerCard"
 import Divider from "@/components/divider/Divider"
 import Certification from "@/components/certification/Certification"
 import fernando from "@/../assets/owners photos/Fernando De Chiano.webp"
@@ -14,7 +14,7 @@ function Nosotros() {
         { title: "Vision", text: "Ser la empresa referente en Latinoamérica en soluciones integrales para la gestión de mercancías peligrosas, reconocida por la capacidad de comprender cada operación, transformar los  desafíos en soluciones impulsando el crecimiento y la evolución de nuestros clientes, estableciendo un nuevo estándar de excelencia en la industria." }
     ]
 
-    const importantPeople = [
+    const owners = [
         {
             img: fernando.src,
             name: "Fernando De Chiano",
@@ -56,10 +56,10 @@ function Nosotros() {
                 {values.map((value) => <Valores key={value.title} title={value.title} text={value.text} />)}
             </div>
 
-            {importantPeople.map((person, i) => {
+            {owners.map((person, i) => {
                 const left = (i % 2) == 0
                 return (
-                    <ImportanPeople key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
+                    <OwnerCard key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
             })}
             <div className="d-flex flex-column gap-3 pt-5">
                 <Divider />
