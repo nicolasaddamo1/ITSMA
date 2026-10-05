@@ -1,3 +1,9 @@
 .pSize{
     width: 35%;
 }
+
+@Media (max-width:768px){
+    .pSize{
+        width: 75%;
+    }
+}
