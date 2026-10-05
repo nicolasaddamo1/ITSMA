@@ -52,7 +52,7 @@ function Nosotros() {
         <section>
 
             <Hero url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" title="Ayudando a empresas" subtitle="en su distribución" />
-            <div className="d-flex justify-content-around py-4">
+            <div className="d-flex flex-column flex-md-row align-items-center justify-content-around py-4">
                 {values.map((value) => <Valores key={value.title} title={value.title} text={value.text} />)}
             </div>
 
@@ -72,7 +72,7 @@ function Nosotros() {
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <b className="fs-3">Certificaciones y más </b>
-                    <div className="d-flex">
+                    <div className="d-flex flex-column flex-md-row">
                         {certifications.map((certif) => <Certification key={certif.title} url={certif.url} title={certif.title} />)}
 
                     </div>

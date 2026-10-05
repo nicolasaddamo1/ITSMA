@@ -7,3 +7,10 @@
     height: 25rem;
     width: 25rem;
 }
+
+@media (max-width: 768px) {
+  .imageSize {
+   height: 15rem;
+    width: 15rem;
+  }
+}
