@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Icon from './svgs/icon/icon'
-import { FaFacebookSquare, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
+import { FaFacebookSquare, FaInstagramSquare, FaLinkedin, FaTiktok } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
 import Link from 'next/link'
 
@@ -48,7 +48,7 @@ function Footer() {
                                 <FaLinkedin size={25} />
                             </a>
                             <a href="" className='bg-light shadow p-2 rounded-circle link-body-emphasis'>
-                                <FaFacebookSquare size={25} />
+                                <FaTiktok size={25} />
                             </a>
                             <a href="" className='bg-light shadow p-2 rounded-circle link-body-emphasis'>
                                 <RiInstagramFill size={25} />
@@ -59,7 +59,8 @@ function Footer() {
                 </div>
                 <div className="gap-2 mb-3 py-2 col-md-3">
                     <h5>Dirección</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7531.706751947722!2d-58.32175408682348!3d-34.693302890093946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333005d7f9e91%3A0x605756da5db8ed8f!2sParrilla%20El%20tano!5e0!3m2!1ses-419!2sar!4v1790279798393!5m2!1ses-419!2sar" width="280" height="300" allowFullScreen={false} loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7531.706751947722!2d-58.32175408682348!3d-34.693302890093946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333005d7f9e91%3A0x605756da5db8ed8f!2sParrilla%20El%20tano!5e0!3m2!1ses-419!2sar!4v1790279798393!5m2!1ses-419!2sar"
+                        className='w-100' height="300" allowFullScreen={false} loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
             <div className="my-4 py-4 border-top">
