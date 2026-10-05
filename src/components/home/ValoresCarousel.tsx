@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { BsShieldCheck, BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { BsShieldCheck } from "react-icons/bs";
 
 const valores = [
   {
@@ -69,10 +69,6 @@ export default function ValoresCarousel() {
     setStartIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
-  const prevSlide = () => {
-    setStartIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
-  };
-
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
@@ -101,7 +97,7 @@ export default function ValoresCarousel() {
 
         {/* 3-Card Carousel Grid Container */}
         <div
-          className="position-relative px-md-4"
+          className="position-relative px-md-2"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -119,10 +115,10 @@ export default function ValoresCarousel() {
               >
                 <div className="itsma-red-card p-4 h-100 d-flex flex-column justify-content-between transition-all">
                   <div>
-                    {/* Header: Icon + Title Side-by-Side */}
+                    {/* Header: Clean Icon without box + Title Side-by-Side */}
                     <div className="d-flex align-items-center gap-3 mb-3">
-                      <div className="d-inline-flex p-2.5 rounded-3 border border-danger text-itsma-red bg-light">
-                        <BsShieldCheck size={28} />
+                      <div className="text-itsma-red d-flex align-items-center">
+                        <BsShieldCheck size={30} />
                       </div>
                       <h4 className="fw-bold text-itsma-red mb-0 fs-5">{item.title}</h4>
                     </div>
@@ -134,25 +130,6 @@ export default function ValoresCarousel() {
               </div>
             ))}
           </div>
-
-          {/* Floating Prev/Next Buttons */}
-          <button
-            onClick={prevSlide}
-            className="position-absolute top-50 start-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-none d-md-flex align-items-center justify-content-center"
-            style={{ width: "44px", height: "44px", zIndex: 10, left: "-15px" }}
-            aria-label="Anterior Valor"
-          >
-            <BsChevronLeft size={20} />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="position-absolute top-50 end-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-none d-md-flex align-items-center justify-content-center"
-            style={{ width: "44px", height: "44px", zIndex: 10, right: "-15px" }}
-            aria-label="Siguiente Valor"
-          >
-            <BsChevronRight size={20} />
-          </button>
         </div>
 
         {/* Red Dots Indicator */}

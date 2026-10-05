@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   color: var(--itsma-text-main);
   background-color: #ffffff;
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: inherit, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -36,6 +36,11 @@ main {
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(253, 0, 4, 0.05);
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.itsma-red-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(253, 0, 4, 0.12);
 }
 
 /* Red Banner */
