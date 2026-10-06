@@ -53,12 +53,19 @@ main {
   box-shadow: 4px 4px 0px var(--itsma-red);
 }
 
-/* Service Card 3D Hover (Scale UP + Shadow SHRINK for realistic 3D distance effect) */
-.service-card-3d {
+/* Secondary 3D Card for Carousel Neighbors */
+.itsma-red-card-secondary {
+  background: #ffffff;
+  border: 1.5px solid #fca5a5;
+  border-radius: 8px;
+  box-shadow: 7px 7px 0px #fee2e2;
+  transform: scale(1);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.service-card-3d:hover {
-  box-shadow: 4px 4px 0px var(--itsma-red) !important;
+
+.itsma-red-card-secondary:hover {
+  transform: translate(-3px, -3px) scale(1.03);
+  box-shadow: 3px 3px 0px #fca5a5;
 }
 
 /* Red Banner */

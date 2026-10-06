@@ -185,9 +185,6 @@ export default function ServicesSection() {
         top: "50%",
         opacity: 1,
         filter: "blur(0px)",
-        border: "2px solid #fd0004",
-        boxShadow: "10px 10px 0px #fca5a5",
-        borderRadius: "8px",
         zIndex: 10,
         pointerEvents: "auto" as const,
       };
@@ -202,9 +199,6 @@ export default function ServicesSection() {
         top: "50%",
         opacity: 0.78,
         filter: "blur(1.5px)",
-        border: "1.5px solid #fca5a5",
-        boxShadow: "7px 7px 0px #fee2e2",
-        borderRadius: "8px",
         zIndex: 5,
         pointerEvents: "auto" as const,
       };
@@ -219,9 +213,6 @@ export default function ServicesSection() {
         top: "50%",
         opacity: 0.35,
         filter: "blur(4.5px)",
-        border: "1px solid #fecdd3",
-        boxShadow: "4px 4px 0px #fff1f2",
-        borderRadius: "8px",
         zIndex: 2,
         pointerEvents: "auto" as const,
       };
@@ -235,7 +226,6 @@ export default function ServicesSection() {
       top: "50%",
       opacity: 0,
       filter: "blur(8px)",
-      border: "1px solid transparent",
       zIndex: 0,
       pointerEvents: "none" as const,
     };
@@ -268,7 +258,7 @@ export default function ServicesSection() {
               <div
                 key={item.id}
                 onClick={() => setActiveIndex(idx)}
-                className="position-absolute cursor-pointer service-card-3d"
+                className="position-absolute cursor-pointer"
                 style={{
                   width: "320px",
                   height: "370px",
@@ -278,8 +268,9 @@ export default function ServicesSection() {
                 }}
               >
                 <div
-                  className="bg-white p-4 d-flex flex-column justify-content-between h-100"
-                  style={{ borderRadius: "inherit" }}
+                  className={`${
+                    isCenter ? "itsma-red-card" : "itsma-red-card-secondary"
+                  } p-4 d-flex flex-column justify-content-between h-100`}
                 >
                   <div>
                     {/* Icon */}
