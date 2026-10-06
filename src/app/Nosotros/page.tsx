@@ -65,7 +65,15 @@ function Nosotros() {
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <b className="fs-3">¿Como lo hacemos?</b>
-                    <p className={`py-5  text-secondary text-center fs-6 ${styles.pSize}`}>Nos enfocamos en entender lo que necesitás para ofrecerte la solución de embalaje adecuada. Combinamos calidad, experiencia y compromiso para garantizar productos confiables, resistentes y listos para acompañar cada uno de tus proyectos.</p>
+                    <p className={`py-5  text-secondary text-center fs-6 ${styles.pSize}`}>
+                        No adaptamos tu operación a una solución. Diseñamos la solución para tu operación.
+                        <br />
+                        <br />
+                        Analizamos cada necesidad y desarrollamos una propuesta exclusiva, integral y a medida, que reúne todo lo que necesitás para gestionar Mercancías Peligrosas: documentación, embalajes, seguros, capacitación y asesoramiento.
+                        <br />
+                        <br />
+                        <p>Una solución única. Todo resuelto.</p>
+                    </p>
                 </div>
             </div>
             <div className="d-flex flex-column gap-3 py-5">

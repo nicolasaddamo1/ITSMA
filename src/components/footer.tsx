@@ -20,7 +20,8 @@ function Footer() {
                     <div className='w-25'>
                         <Icon />
                     </div>
-                    <p className='py-2'>lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique molestias vitae repellendus! </p>
+                    <p className='py-2 w-75'>Detrás de cada operación hay una empresa que confía en nosotros.
+                        Por eso, hacemos de cada desafío una solución.</p>
                 </div>
                 <div className="gap-2 mb-3 py-2 col-6 col-md-3">
                     <h5>Links</h5>

@@ -211,7 +211,7 @@ export default function ContactPage() {
                       type="submit"
                       disabled={isSubmitting}
                       className="btn text-white w-100 py-3 rounded-pill fw-bold d-flex align-items-center justify-content-center gap-2 shadow-sm"
-                      style={{ background: "var(--itsma-red)", border: "none" }}
+                      style={{ background: "linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%)", border: "none" }}
                     >
                       {isSubmitting ? (
                         <>
