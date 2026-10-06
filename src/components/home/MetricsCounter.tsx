@@ -18,15 +18,21 @@ const metricsData: MetricItem[] = [
 
 export default function MetricsCounter() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [counts, setCounts] = useState<number[]>(metricsData.map(() => 0));
+  const hasAnimated = useRef(false);
+  const [counts, setCounts] = useState<number[]>(metricsData.map((item) => item.target));
 
   useEffect(() => {
+    // Set to 0 for initial entrance animation
+    setCounts(metricsData.map(() => 0));
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Reset to 0 and trigger ascending counter animation
-            setCounts(metricsData.map(() => 0));
+          if (entry.isIntersecting && !hasAnimated.current) {
+            hasAnimated.current = true;
+            if (sectionRef.current) {
+              observer.unobserve(sectionRef.current);
+            }
 
             const duration = 1800; // ms
             const startTime = performance.now();
@@ -54,21 +60,22 @@ export default function MetricsCounter() {
       { threshold: 0.25 }
     );
 
-    if (sectionRef.current) {
+    if (sectionRef.current && !hasAnimated.current) {
       observer.observe(sectionRef.current);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.disconnect();
     };
   }, []);
 
   return (
     <section ref={sectionRef} className="py-4 bg-white">
       <div className="container">
-        <div className="itsma-red-banner p-4 p-lg-5">
+        <div
+          className="p-4 p-lg-5 rounded-4 text-white shadow-lg"
+          style={{ background: "#A20A3A", borderRadius: "1.25rem" }}
+        >
           <div className="row g-4 text-center align-items-center">
             {metricsData.map((item, index) => (
               <div key={index} className="col-6 col-md-3">

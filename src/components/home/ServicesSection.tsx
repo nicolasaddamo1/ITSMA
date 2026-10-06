@@ -186,7 +186,6 @@ export default function ServicesSection() {
         opacity: 1,
         filter: "blur(0px)",
         border: "2.5px solid #fd0004",
-        boxShadow: "0 14px 40px rgba(253, 0, 4, 0.22)",
         zIndex: 10,
         pointerEvents: "auto" as const,
       };
@@ -279,9 +278,8 @@ export default function ServicesSection() {
                     {/* Icon */}
                     <div className="text-center mb-3">
                       <div
-                        className={`d-inline-flex align-items-center justify-content-center p-3 rounded-circle border ${
-                          isCenter ? "border-danger bg-danger-subtle" : "border-secondary-subtle bg-light"
-                        }`}
+                        className={`d-inline-flex align-items-center justify-content-center p-3 rounded-circle border ${isCenter ? "border-danger bg-danger-subtle" : "border-secondary-subtle bg-light"
+                          }`}
                         style={{ width: "60px", height: "60px" }}
                       >
                         {item.icon}
@@ -290,9 +288,8 @@ export default function ServicesSection() {
 
                     {/* Title */}
                     <h5
-                      className={`fw-bold text-center mb-2 fs-5 ${
-                        isCenter ? "text-itsma-red" : "text-dark"
-                      }`}
+                      className={`fw-bold text-center mb-2 fs-5 ${isCenter ? "text-itsma-red" : "text-dark"
+                        }`}
                       style={{ minHeight: "2.8rem" }}
                     >
                       {item.title}
@@ -311,9 +308,8 @@ export default function ServicesSection() {
                         e.stopPropagation();
                         setActiveModalService(item);
                       }}
-                      className={`btn btn-sm w-100 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2 ${
-                        isCenter ? "btn-danger" : "btn-outline-danger"
-                      }`}
+                      className={`btn btn-sm w-100 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2 ${isCenter ? "btn-danger" : "btn-outline-danger"
+                        }`}
                     >
                       Saber más
                       <BsArrowRight />

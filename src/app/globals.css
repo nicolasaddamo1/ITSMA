@@ -39,16 +39,15 @@ main {
 }
 
 .itsma-red-card:hover {
-  transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(253, 0, 4, 0.12);
 }
 
 /* Red Banner */
 .itsma-red-banner {
-  background: var(--itsma-red-gradient);
+  background: var(--itsma-red);
   border-radius: 1.25rem;
   color: #ffffff;
-  box-shadow: 0 10px 30px rgba(162, 10, 58, 0.25);
+  box-shadow: 0 10px 30px rgba(253, 0, 4, 0.2);
 }
 
 /* Red Line Accent above section titles */
