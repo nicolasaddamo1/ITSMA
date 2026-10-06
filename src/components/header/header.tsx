@@ -10,12 +10,14 @@ function Header() {
     const links = [
         { name: "Inicio", path: "/" },
         { name: "Nosotros", path: "/Nosotros" },
+        { name: "Servicios", path: "/Servicios" },
         { name: "Contacto", path: "/Contacto" },
+        // { name: "Clientes", path: "/Clientes" },
     ]
     return (
         <div className={`navbar navbar-expand-lg fixed-top ${styles.bgBlur}`}>
-            <header className="d-flex flex-wrap justify-content-center justify-content-md-end container-fluid py-2 px-4">
-                <ul className="nav nav-pills fs-6 fw-semibold ms-auto">
+            <header className="d-flex flex-wrap justify-content-md-end justify-content-center px-4 py-2 container-fluid">
+                <ul className="ms-auto nav nav-pills fs-6 fw-semibold">
                     {
                         links.map((link) => {
                             const isActive = pathname === link.path
