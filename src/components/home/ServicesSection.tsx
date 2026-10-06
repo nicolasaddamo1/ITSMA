@@ -268,9 +268,8 @@ export default function ServicesSection() {
                 }}
               >
                 <div
-                  className={`${
-                    isCenter ? "itsma-red-card" : "itsma-red-card-secondary"
-                  } p-4 d-flex flex-column justify-content-between h-100`}
+                  className={`${isCenter ? "itsma-red-card" : "itsma-red-card-secondary"
+                    } p-4 d-flex flex-column justify-content-between h-100`}
                 >
                   <div>
                     {/* Icon */}
@@ -339,7 +338,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Carousel Pagination Dots placed right below cards */}
-        <div className="d-flex justify-content-center align-items-center gap-2 mt-3 pt-1">
+        <div className="d-flex justify-content-center align-items-center gap-2 mt-3 pt-1" style={{ minHeight: "24px" }}>
           {servicesData.map((_, dotIdx) => (
             <button
               key={dotIdx}
@@ -362,17 +361,14 @@ export default function ServicesSection() {
             className="modal-dialog modal-dialog-centered modal-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="modal-content rounded-4 border-0 shadow-lg">
+            <div className="modal-content rounded-3 border-2 border-danger shadow-lg">
               <div className="modal-header border-bottom p-4 bg-light">
                 <div className="d-flex align-items-center gap-3">
                   <div className="p-3 bg-white rounded-3 border border-danger">
                     {activeModalService.icon}
                   </div>
                   <div>
-                    <span className="badge bg-danger-subtle text-danger fw-semibold mb-1">
-                      {activeModalService.badge}
-                    </span>
-                    <h4 className="modal-title fw-bold text-dark mb-0">
+                    <h4 className="modal-title fw-bold text-itsma-red mb-0">
                       {activeModalService.title}
                     </h4>
                   </div>
@@ -403,7 +399,7 @@ export default function ServicesSection() {
                   ))}
                 </div>
 
-                <div className="alert alert-danger rounded-3 mb-0 d-flex align-items-center justify-content-between">
+                <div className="p-4 bg-secondary-subtle rounded-3 mb-0 d-flex align-items-center justify-content-between">
                   <div>
                     <h6 className="fw-bold mb-1">¿Necesitás este servicio para tu empresa?</h6>
                     <small>Analizamos tu operación y desarrollamos la solución en tu planta.</small>

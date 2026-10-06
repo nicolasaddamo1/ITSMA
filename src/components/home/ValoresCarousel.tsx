@@ -100,12 +100,13 @@ export default function ValoresCarousel() {
 
         {/* 3-Card Carousel Grid Container */}
         <div
-          className="position-relative px-md-4"
+          className="position-relative px-md-4 "
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Chevron Prev Button */}
           <button
+            type="button"
             onClick={prevSlide}
             className="position-absolute top-50 start-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-flex align-items-center justify-content-center"
             style={{ width: "40px", height: "40px", zIndex: 10, left: "-10px" }}
@@ -126,7 +127,10 @@ export default function ValoresCarousel() {
                     : "col-4"
                 }
               >
-                <div className="itsma-red-card p-4 h-100 d-flex flex-column justify-content-between">
+                <div
+                  className="itsma-red-card p-4 h-100 d-flex flex-column justify-content-between"
+                  style={{ minHeight: "240px" }}
+                >
                   <div>
                     {/* Header: Clean Icon without box + Title Side-by-Side */}
                     <div className="d-flex align-items-center gap-3 mb-3">
@@ -146,6 +150,7 @@ export default function ValoresCarousel() {
 
           {/* Chevron Next Button */}
           <button
+            type="button"
             onClick={nextSlide}
             className="position-absolute top-50 end-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-flex align-items-center justify-content-center"
             style={{ width: "40px", height: "40px", zIndex: 10, right: "-10px" }}
@@ -156,10 +161,11 @@ export default function ValoresCarousel() {
         </div>
 
         {/* 7 Red Dots Indicator for 100% full continuous rotation */}
-        <div className="d-flex justify-content-center gap-2 mt-4 pt-2">
+        <div className="d-flex justify-content-center align-items-center gap-2 mt-4 pt-2" style={{ minHeight: "24px" }}>
           {valores.map((val, dotIdx) => (
             <button
               key={val.title}
+              type="button"
               onClick={() => setStartIndex(dotIdx)}
               className={`carousel-dot-red ${startIndex === dotIdx ? "active" : ""}`}
               aria-label={`Ver valor ${val.title}`}

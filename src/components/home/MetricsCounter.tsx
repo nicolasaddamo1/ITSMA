@@ -74,7 +74,7 @@ export default function MetricsCounter() {
       <div className="container">
         <div
           className="p-4 p-lg-5 rounded-4 text-white shadow-lg"
-          style={{ background: "#A20A3A", borderRadius: "1.25rem" }}
+          style={{ background: "linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%)", borderRadius: "1.25rem" }}
         >
           <div className="row g-4 text-center align-items-center">
             {metricsData.map((item, index) => (
