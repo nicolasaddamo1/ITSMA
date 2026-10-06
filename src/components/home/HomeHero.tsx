@@ -29,32 +29,43 @@ export default function HomeHero() {
           }}
         />
 
-        {/* 3. Icono SVG y textos centrados en la composición */}
-        <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center p-3 pointer-events-none">
-          <div
-            className="d-flex flex-column align-items-center justify-content-center gap-2 mt-4"
-            style={{ filter: "drop-shadow(0px 8px 22px rgba(0, 0, 0, 0.9))" }}
-          >
-            {/* Icono SVG proporcional */}
-            <div style={{ width: "135px", height: "152px" }}>
-              <Icon />
-            </div>
+        {/* 3. Logo ubicado arriba a la izquierda, justo debajo del navbar, sin sombreado */}
+        <div
+          className="position-absolute start-0 pointer-events-none ms-3 ms-md-4"
+          style={{
+            top: "75px",
+            zIndex: 10,
+            width: "110px",
+            height: "124px",
+          }}
+        >
+          <Icon />
+        </div>
 
+        {/* 4. Textos centrados con fino borde negro (1px) */}
+        <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center p-3 pointer-events-none">
+          <div className="d-flex flex-column align-items-center justify-content-center gap-2 mt-4">
             {/* Título SOLUCIONES INTEGRALES */}
             <h1
               className="display-6 fw-bold text-white mb-0 font-serif"
-              style={{ fontSize: "calc(1.3rem + 1.2vw)", letterSpacing: "4px" }}
+              style={{
+                fontSize: "calc(1.3rem + 1.2vw)",
+                letterSpacing: "4px",
+                WebkitTextStroke: "1px #000000",
+                paintOrder: "stroke fill",
+              }}
             >
               SOLUCIONES INTEGRALES
             </h1>
 
             {/* Subtítulo EN MERCANCÍAS PELIGROSAS MULTIMODAL */}
             <p
-              className="fw-bold mb-0 text-uppercase"
+              className="fw-bold mb-0 text-uppercase text-white"
               style={{
-                color: "#e2e8f0",
-                fontSize: "calc(0.8rem + 0.5vw)",
+                fontSize: "calc(0.85rem + 0.5vw)",
                 letterSpacing: "3px",
+                WebkitTextStroke: "1px #000000",
+                paintOrder: "stroke fill",
               }}
             >
               EN MERCANCÍAS PELIGROSAS MULTIMODAL

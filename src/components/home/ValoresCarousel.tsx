@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { BsShieldCheck } from "react-icons/bs";
+import { BsShieldCheck, BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const valores = [
   {
@@ -63,10 +63,13 @@ export default function ValoresCarousel() {
   }, []);
 
   const total = valores.length;
-  const maxIndex = Math.max(0, total - cardsToShow);
 
   const nextSlide = () => {
-    setStartIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    setStartIndex((prev) => (prev + 1) % total);
+  };
+
+  const prevSlide = () => {
+    setStartIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
   };
 
   useEffect(() => {
@@ -77,7 +80,7 @@ export default function ValoresCarousel() {
     return () => clearInterval(timer);
   }, [startIndex, isPaused, cardsToShow]);
 
-  // Compute visible 3 cards
+  // Compute visible cards for continuous 360 loop
   const visibleCards = [];
   for (let i = 0; i < cardsToShow; i++) {
     const cardIdx = (startIndex + i) % total;
@@ -97,14 +100,24 @@ export default function ValoresCarousel() {
 
         {/* 3-Card Carousel Grid Container */}
         <div
-          className="position-relative px-md-2"
+          className="position-relative px-md-4"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Chevron Prev Button */}
+          <button
+            onClick={prevSlide}
+            className="position-absolute top-50 start-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-flex align-items-center justify-content-center"
+            style={{ width: "40px", height: "40px", zIndex: 10, left: "-10px" }}
+            aria-label="Anterior Valor"
+          >
+            <BsChevronLeft size={18} />
+          </button>
+
           <div className="row g-4 justify-content-center">
             {visibleCards.map((item, index) => (
               <div
-                key={`${item.title}-${index}`}
+                key={`${item.title}-${index}-${item.idx}`}
                 className={
                   cardsToShow === 1
                     ? "col-12"
@@ -113,7 +126,7 @@ export default function ValoresCarousel() {
                     : "col-4"
                 }
               >
-                <div className="itsma-red-card p-4 h-100 d-flex flex-column justify-content-between transition-all">
+                <div className="itsma-red-card p-4 h-100 d-flex flex-column justify-content-between">
                   <div>
                     {/* Header: Clean Icon without box + Title Side-by-Side */}
                     <div className="d-flex align-items-center gap-3 mb-3">
@@ -130,16 +143,27 @@ export default function ValoresCarousel() {
               </div>
             ))}
           </div>
+
+          {/* Chevron Next Button */}
+          <button
+            onClick={nextSlide}
+            className="position-absolute top-50 end-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-flex align-items-center justify-content-center"
+            style={{ width: "40px", height: "40px", zIndex: 10, right: "-10px" }}
+            aria-label="Siguiente Valor"
+          >
+            <BsChevronRight size={18} />
+          </button>
         </div>
 
-        {/* Red Dots Indicator */}
+        {/* 7 Red Dots Indicator for 100% full continuous rotation */}
         <div className="d-flex justify-content-center gap-2 mt-4 pt-2">
-          {Array.from({ length: maxIndex + 1 }).map((_, dotIdx) => (
+          {valores.map((val, dotIdx) => (
             <button
-              key={dotIdx}
+              key={val.title}
               onClick={() => setStartIndex(dotIdx)}
               className={`carousel-dot-red ${startIndex === dotIdx ? "active" : ""}`}
-              aria-label={`Página de valores ${dotIdx + 1}`}
+              aria-label={`Ver valor ${val.title}`}
+              title={val.title}
             />
           ))}
         </div>

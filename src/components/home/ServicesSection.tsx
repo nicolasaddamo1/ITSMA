@@ -185,7 +185,9 @@ export default function ServicesSection() {
         top: "50%",
         opacity: 1,
         filter: "blur(0px)",
-        border: "2.5px solid #fd0004",
+        border: "2px solid #fd0004",
+        boxShadow: "10px 10px 0px #fca5a5",
+        borderRadius: "8px",
         zIndex: 10,
         pointerEvents: "auto" as const,
       };
@@ -201,7 +203,8 @@ export default function ServicesSection() {
         opacity: 0.78,
         filter: "blur(1.5px)",
         border: "1.5px solid #fca5a5",
-        boxShadow: "0 6px 20px rgba(0, 0, 0, 0.05)",
+        boxShadow: "7px 7px 0px #fee2e2",
+        borderRadius: "8px",
         zIndex: 5,
         pointerEvents: "auto" as const,
       };
@@ -217,7 +220,8 @@ export default function ServicesSection() {
         opacity: 0.35,
         filter: "blur(4.5px)",
         border: "1px solid #fecdd3",
-        boxShadow: "none",
+        boxShadow: "4px 4px 0px #fff1f2",
+        borderRadius: "8px",
         zIndex: 2,
         pointerEvents: "auto" as const,
       };
@@ -264,7 +268,7 @@ export default function ServicesSection() {
               <div
                 key={item.id}
                 onClick={() => setActiveIndex(idx)}
-                className="position-absolute cursor-pointer"
+                className="position-absolute cursor-pointer service-card-3d"
                 style={{
                   width: "320px",
                   height: "370px",
@@ -273,7 +277,10 @@ export default function ServicesSection() {
                   ...cardStyle,
                 }}
               >
-                <div className="bg-white rounded-4 p-4 d-flex flex-column justify-content-between h-100">
+                <div
+                  className="bg-white p-4 d-flex flex-column justify-content-between h-100"
+                  style={{ borderRadius: "inherit" }}
+                >
                   <div>
                     {/* Icon */}
                     <div className="text-center mb-3">
