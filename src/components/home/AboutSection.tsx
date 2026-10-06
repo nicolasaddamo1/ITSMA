@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { BsPlayCircleFill, BsArrowRight } from "react-icons/bs";
 
@@ -25,13 +26,13 @@ export default function AboutSection() {
               .
             </p>
 
-            <a
-              href="#contacto"
+            <Link
+              href="/Nosotros"
               className="text-itsma-red fw-semibold text-decoration-none d-inline-flex align-items-center gap-2 fs-6 hover-underline"
             >
               Conocé más de nosotros
               <BsArrowRight />
-            </a>
+            </Link>
           </div>
 
           <div className="col-lg-6">
