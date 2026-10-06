@@ -11,7 +11,7 @@ function Footer() {
         { name: "Nosotros", path: "/Nosotros" },
         // { name: "Servicios", path: "/Servicios" },
         // { name: "Clientes", path: "/Clientes" },
-        // { name: "Contacto", path: "/Contacto" },
+        { name: "Contacto", path: "/Contacto" },
     ]
     return (
         <footer className="px-4 w-100">
@@ -37,10 +37,8 @@ function Footer() {
                 <div className="gap-2 mb-3 py-2 col-6 col-md-3">
                     <h5>Contact us</h5>
                     <ul className="flex-column nav">
-                        <li className="mb-2 nav-item">Home Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut culpa esse iste corrupti quaerat fugit vel repellendus </li>
-
                         <li className="mb-2 nav-item">
-                            + 99 9999-9999
+                            <a href="mailto:itsma.dgr@gmail.com" className="text-body-secondary text-decoration-none">itsma.dgr@gmail.com</a>
                         </li>
                         <li className="d-flex gap-4 mb-2 nav-item">
                             {/* //! TODO change colors on hover */}

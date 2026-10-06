@@ -185,8 +185,6 @@ export default function ServicesSection() {
         top: "50%",
         opacity: 1,
         filter: "blur(0px)",
-        border: "2.5px solid #fd0004",
-        boxShadow: "0 14px 40px rgba(253, 0, 4, 0.22)",
         zIndex: 10,
         pointerEvents: "auto" as const,
       };
@@ -201,8 +199,6 @@ export default function ServicesSection() {
         top: "50%",
         opacity: 0.78,
         filter: "blur(1.5px)",
-        border: "1.5px solid #fca5a5",
-        boxShadow: "0 6px 20px rgba(0, 0, 0, 0.05)",
         zIndex: 5,
         pointerEvents: "auto" as const,
       };
@@ -217,8 +213,6 @@ export default function ServicesSection() {
         top: "50%",
         opacity: 0.35,
         filter: "blur(4.5px)",
-        border: "1px solid #fecdd3",
-        boxShadow: "none",
         zIndex: 2,
         pointerEvents: "auto" as const,
       };
@@ -232,7 +226,6 @@ export default function ServicesSection() {
       top: "50%",
       opacity: 0,
       filter: "blur(8px)",
-      border: "1px solid transparent",
       zIndex: 0,
       pointerEvents: "none" as const,
     };
@@ -274,14 +267,17 @@ export default function ServicesSection() {
                   ...cardStyle,
                 }}
               >
-                <div className="bg-white rounded-4 p-4 d-flex flex-column justify-content-between h-100">
+                <div
+                  className={`${
+                    isCenter ? "itsma-red-card" : "itsma-red-card-secondary"
+                  } p-4 d-flex flex-column justify-content-between h-100`}
+                >
                   <div>
                     {/* Icon */}
                     <div className="text-center mb-3">
                       <div
-                        className={`d-inline-flex align-items-center justify-content-center p-3 rounded-circle border ${
-                          isCenter ? "border-danger bg-danger-subtle" : "border-secondary-subtle bg-light"
-                        }`}
+                        className={`d-inline-flex align-items-center justify-content-center p-3 rounded-circle border ${isCenter ? "border-danger bg-danger-subtle" : "border-secondary-subtle bg-light"
+                          }`}
                         style={{ width: "60px", height: "60px" }}
                       >
                         {item.icon}
@@ -290,9 +286,8 @@ export default function ServicesSection() {
 
                     {/* Title */}
                     <h5
-                      className={`fw-bold text-center mb-2 fs-5 ${
-                        isCenter ? "text-itsma-red" : "text-dark"
-                      }`}
+                      className={`fw-bold text-center mb-2 fs-5 ${isCenter ? "text-itsma-red" : "text-dark"
+                        }`}
                       style={{ minHeight: "2.8rem" }}
                     >
                       {item.title}
@@ -311,9 +306,8 @@ export default function ServicesSection() {
                         e.stopPropagation();
                         setActiveModalService(item);
                       }}
-                      className={`btn btn-sm w-100 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2 ${
-                        isCenter ? "btn-danger" : "btn-outline-danger"
-                      }`}
+                      className={`btn btn-sm w-100 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2 ${isCenter ? "btn-danger" : "btn-outline-danger"
+                        }`}
                     >
                       Saber más
                       <BsArrowRight />

@@ -16,39 +16,64 @@ body {
   flex-direction: column;
   color: var(--itsma-text-main);
   background-color: #ffffff;
-  font-family: inherit, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-fira-sans), "Fira Sans", var(--font-roboto), "Roboto", system-ui, sans-serif !important;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-fira-sans), "Fira Sans", sans-serif;
 }
 
 main {
   flex: 1;
 }
 
-/* Serif font helper for titles matching Figma design */
-.font-serif {
-  font-family: "Georgia", "Times New Roman", serif;
+/* Serif font helper mapped to Roboto Slab (matching log4.com.ar) */
+.font-serif, .font-slab {
+  font-family: var(--font-roboto-slab), "Roboto Slab", Georgia, serif !important;
 }
 
-/* Figma Red Outline Card */
+/* Roboto body font utility */
+.font-roboto {
+  font-family: var(--font-roboto), "Roboto", sans-serif !important;
+}
+
+/* Figma Red 3D Card with Parallax Scale & Shadow Shrink Hover Effect */
 .itsma-red-card {
   background: #ffffff;
-  border: 1.5px solid var(--itsma-red);
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(253, 0, 4, 0.05);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  border: 2px solid var(--itsma-red);
+  border-radius: 8px;
+  box-shadow: 10px 10px 0px #fca5a5;
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .itsma-red-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(253, 0, 4, 0.12);
+  transform: translate(-3px, -3px) scale(1.04);
+  box-shadow: 4px 4px 0px var(--itsma-red);
+}
+
+/* Secondary 3D Card for Carousel Neighbors */
+.itsma-red-card-secondary {
+  background: #ffffff;
+  border: 1.5px solid #fca5a5;
+  border-radius: 8px;
+  box-shadow: 7px 7px 0px #fee2e2;
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.itsma-red-card-secondary:hover {
+  transform: translate(-3px, -3px) scale(1.03);
+  box-shadow: 3px 3px 0px #fca5a5;
 }
 
 /* Red Banner */
 .itsma-red-banner {
-  background: var(--itsma-red-gradient);
+  background: var(--itsma-red);
   border-radius: 1.25rem;
   color: #ffffff;
-  box-shadow: 0 10px 30px rgba(162, 10, 58, 0.25);
+  box-shadow: 0 10px 30px rgba(253, 0, 4, 0.2);
 }
 
 /* Red Line Accent above section titles */

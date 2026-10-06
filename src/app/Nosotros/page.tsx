@@ -16,16 +16,16 @@ function Nosotros() {
 
     const owners = [
         {
-            img: fernando.src,
-            name: "Fernando De Chiano",
-            title: "Gerente de Desarrollo Comercial y Relaciones Estratégicas",
-            description: "Responsable del desarrollo comercial, generación de nuevas oportunidades de negocio, vinculación estratégica y expansión de ITSMA en nuevos mercados."
-        },
-        {
             img: natalia.src,
             name: "Natalia Soledad Arata",
             title: "CEO & Directora General | Fundadora de ITSMA",
             description: "Responsable de la dirección estratégica, crecimiento y posicionamiento de ITSMA, liderando su visión y desarrollo integral."
+        },
+        {
+            img: fernando.src,
+            name: "Fernando De Chiano",
+            title: "Gerente de Desarrollo Comercial y Relaciones Estratégicas",
+            description: "Responsable del desarrollo comercial, generación de nuevas oportunidades de negocio, vinculación estratégica y expansión de ITSMA en nuevos mercados."
         },
         {
             img: marcelo.src,
@@ -49,7 +49,7 @@ function Nosotros() {
         },
     ]
     return (
-        <section>
+        <section className="pt-5 mt-3">
 
             <Hero url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" title="Ayudando a empresas" subtitle="en su distribución" />
             <div className="d-flex flex-column flex-md-row align-items-center justify-content-around py-4">
