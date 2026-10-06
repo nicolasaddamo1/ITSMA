@@ -19,9 +19,18 @@ export default function AboutSection() {
               <span className="text-itsma-red fw-bold">
                 experiencia y conocimiento
               </span>{" "}
-              necesarios para comprender la realidad de cada empresa y{" "}
+              especializado en{" "}
               <span className="text-itsma-red fw-bold">
-                transformar sus desafíos en soluciones
+                Mercancías Peligrosas.
+              </span>{" "}
+              Comprendemos la realidad de cada empresa,
+              anticipamos sus desafíos y  {" "}
+              <span> {" "}
+                transformamos la complejidad en {" "}
+                <span className="text-itsma-red fw-bold">
+                  soluciones estratégicas,
+                </span>{" "}
+                seguras y a medida
               </span>
               .
             </p>
