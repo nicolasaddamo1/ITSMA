@@ -41,8 +41,8 @@ function Nosotros() {
         {
             img: alberto.src,
             name: "Luis Alberto Pascucci",
-            title: "Responsable de formación desde el inicio",
-            description: "Formando a los mejores especialistas en mercancías peligrosas. Docente con mas de 25 años de experiencia."
+            title: "Responsable de Learning & Development",
+            description: "Formando a los mejores especialistas en mercancías peligrosas. Docente con mas de 40 años de experiencia."
         },
     ]
     const certifications = [

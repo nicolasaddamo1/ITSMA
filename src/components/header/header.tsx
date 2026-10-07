@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import { usePathname } from "next/navigation"
 import styles from "./header.module.css"
 import Link from "next/link"
@@ -18,7 +18,6 @@ interface MenuItem {
 
 function Header() {
     const pathname = usePathname()
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     const links: MenuItem[] = [
         {
@@ -66,7 +65,6 @@ function Header() {
                     {links.map((link) => {
                         const isActive = pathname === link.path
                         const hasSubItems = link.subItems && link.subItems.length > 0;
-                        const isOpen = openDropdown === link.name;
 
                         return (
                             <li 
