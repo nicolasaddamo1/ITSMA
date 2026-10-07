@@ -9,7 +9,7 @@ function Footer() {
     const links = [
         { name: "Inicio", path: "/" },
         { name: "Nosotros", path: "/Nosotros" },
-        // { name: "Servicios", path: "/Servicios" },
+        { name: "Servicios", path: "/Servicios" },
         // { name: "Clientes", path: "/Clientes" },
         { name: "Contacto", path: "/Contacto" },
     ]

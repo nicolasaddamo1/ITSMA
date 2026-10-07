@@ -88,19 +88,19 @@ export default function ValoresCarousel() {
   }
 
   return (
-    <section id="valores" className="py-5 bg-white position-relative overflow-hidden">
-      <div className="container py-lg-4">
+    <section id="valores" className="position-relative bg-white py-5 overflow-hidden">
+      <div className="py-lg-4 container">
         {/* Title with Red Accent Line */}
-        <div className="text-center max-w-2xl mx-auto mb-5">
-          <div className="red-line-accent mb-2" />
-          <h2 className="display-6 font-serif fw-bold text-dark mb-3">
+        <div className="mx-auto mb-5 max-w-2xl text-center">
+          <div className="mb-2 red-line-accent" />
+          <h2 className="mb-3 font-serif text-dark display-6 fw-bold">
             Valores ITSMA
           </h2>
         </div>
 
         {/* 3-Card Carousel Grid Container */}
         <div
-          className="position-relative px-md-4 "
+          className="position-relative px-md-4"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -108,14 +108,14 @@ export default function ValoresCarousel() {
           <button
             type="button"
             onClick={prevSlide}
-            className="position-absolute top-50 start-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-flex align-items-center justify-content-center"
+            className="top-50 position-absolute d-flex align-items-center justify-content-center shadow p-2 border border-danger rounded-circle text-itsma-red translate-middle-y start-0 btn btn-light"
             style={{ width: "40px", height: "40px", zIndex: 10, left: "-10px" }}
             aria-label="Anterior Valor"
           >
             <BsChevronLeft size={18} />
           </button>
 
-          <div className="row g-4 justify-content-center">
+          <div className="justify-content-center row g-4">
             {visibleCards.map((item, index) => (
               <div
                 key={`${item.title}-${index}-${item.idx}`}
@@ -123,25 +123,27 @@ export default function ValoresCarousel() {
                   cardsToShow === 1
                     ? "col-12"
                     : cardsToShow === 2
-                    ? "col-6"
-                    : "col-4"
+                      ? "col-6"
+                      : "col-4"
                 }
               >
-                <div
-                  className="itsma-red-card p-4 h-100 d-flex flex-column justify-content-between"
-                  style={{ minHeight: "240px" }}
-                >
-                  <div>
-                    {/* Header: Clean Icon without box + Title Side-by-Side */}
-                    <div className="d-flex align-items-center gap-3 mb-3">
-                      <div className="text-itsma-red d-flex align-items-center">
-                        <BsShieldCheck size={30} />
+                <div className="d-flex flex-column justify-content-between p-4 h-100 itsma-red-card">
+                  <div
+                    className="d-flex flex-column justify-content-between p-4 h-100 itsma-red-card"
+                    style={{ minHeight: "240px" }}
+                  >
+                    <div>
+                      {/* Header: Clean Icon without box + Title Side-by-Side */}
+                      <div className="d-flex align-items-center gap-3 mb-3">
+                        <div className="d-flex align-items-center text-itsma-red">
+                          <BsShieldCheck size={30} />
+                        </div>
+                        <h4 className="mb-0 text-itsma-red fw-bold fs-5">{item.title}</h4>
                       </div>
-                      <h4 className="fw-bold text-itsma-red mb-0 fs-5">{item.title}</h4>
-                    </div>
 
-                    {/* Description */}
-                    <p className="text-secondary small mb-0 lh-base">{item.description}</p>
+                      {/* Description */}
+                      <p className="mb-0 text-secondary small lh-base">{item.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -149,10 +151,10 @@ export default function ValoresCarousel() {
           </div>
 
           {/* Chevron Next Button */}
-          <button
+          < button
             type="button"
             onClick={nextSlide}
-            className="position-absolute top-50 end-0 translate-middle-y btn btn-light rounded-circle p-2 shadow border border-danger text-itsma-red d-flex align-items-center justify-content-center"
+            className="top-50 position-absolute d-flex align-items-center justify-content-center shadow p-2 border border-danger rounded-circle text-itsma-red translate-middle-y end-0 btn btn-light"
             style={{ width: "40px", height: "40px", zIndex: 10, right: "-10px" }}
             aria-label="Siguiente Valor"
           >
@@ -161,7 +163,7 @@ export default function ValoresCarousel() {
         </div>
 
         {/* 7 Red Dots Indicator for 100% full continuous rotation */}
-        <div className="d-flex justify-content-center align-items-center gap-2 mt-4 pt-2" style={{ minHeight: "24px" }}>
+        <div className="d-flex align-items-center justify-content-center gap-2 mt-4 pt-2" style={{ minHeight: "24px" }}>
           {valores.map((val, dotIdx) => (
             <button
               key={val.title}
