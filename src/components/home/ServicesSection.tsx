@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   BsBoxSeam,
   BsHeadset,
@@ -405,9 +406,9 @@ export default function ServicesSection() {
                     <h6 className="mb-1 fw-bold">¿Necesitás este servicio para tu empresa?</h6>
                     <small>Analizamos tu operación y desarrollamos la solución en tu planta.</small>
                   </div>
-                  <a href="#contacto" onClick={() => setActiveModalService(null)} className="px-3 btn btn-danger btn-sm fw-semibold">
+                  <Link href="/Contacto" onClick={() => setActiveModalService(null)} className="px-3 btn btn-danger btn-sm fw-semibold">
                     Contactar
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
