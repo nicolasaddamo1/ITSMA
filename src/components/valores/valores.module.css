@@ -1,6 +1,21 @@
+.valor {
+    width: 70%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .valor {
+        width: 25%;
+    }
+}
+
 .title{
       background: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+p .description {
+  font-size: 300rem !important;
+   line-height: 1.2;
 }

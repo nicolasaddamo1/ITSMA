@@ -70,50 +70,50 @@ export default function ContactPage() {
   };
 
   return (
-    <section id="contacto" className="py-5 pt-lg-5 mt-4 bg-white position-relative">
-      <div className="container py-lg-4">
+    <section id="contacto" className="position-relative bg-white mt-4 py-5 pt-lg-5">
+      <div className="py-lg-4 container">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-5">
-          <div className="red-line-accent mb-2" />
-          <h2 className="display-6 font-serif fw-bold text-dark mb-2">Contáctanos</h2>
+        <div className="mx-auto mb-5 max-w-2xl text-center">
+          <div className="mb-2 red-line-accent" />
+          <h2 className="mb-2 font-serif text-dark display-6 fw-bold">Contáctanos</h2>
           <p className="text-secondary fs-6">
             ¿Tenés dudas o necesitás un presupuesto personalizado para el embalaje y logística de tu empresa? Escribinos directamente.
           </p>
         </div>
 
-        <div className="row gy-5 align-items-start">
+        <div className="align-items-start row gy-5">
           {/* Left Column: Contact Info Cards */}
           <div className="col-lg-5">
             <div className="d-flex flex-column gap-4">
-              <div className="p-4 rounded-4 border border-light bg-light shadow-sm d-flex align-items-center gap-3">
-                <div className="p-3 rounded-circle bg-danger-subtle text-danger d-flex align-items-center justify-content-center" style={{ width: "54px", height: "54px" }}>
-                  <BsTelephone className="fs-4 text-itsma-red" />
+              <div className="d-flex align-items-center gap-3 bg-light shadow-sm p-4 border border-light rounded-4">
+                <div className="d-flex align-items-center justify-content-center bg-danger-subtle p-3 rounded-circle text-danger" style={{ width: "54px", height: "54px" }}>
+                  <BsTelephone className="text-itsma-red fs-4" />
                 </div>
                 <div>
-                  <h6 className="fw-bold text-dark mb-1">Teléfono / WhatsApp</h6>
-                  <p className="text-secondary mb-0">+54 11 9999-9999</p>
+                  <h6 className="mb-1 text-dark fw-bold">Teléfono / WhatsApp</h6>
+                  <p className="mb-0 text-secondary">+54 11 9999-9999</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-4 border border-light bg-light shadow-sm d-flex align-items-center gap-3">
-                <div className="p-3 rounded-circle bg-danger-subtle text-danger d-flex align-items-center justify-content-center" style={{ width: "54px", height: "54px" }}>
-                  <BsEnvelope className="fs-4 text-itsma-red" />
+              <div className="d-flex align-items-center gap-3 bg-light shadow-sm p-4 border border-light rounded-4">
+                <div className="d-flex align-items-center justify-content-center bg-danger-subtle p-3 rounded-circle text-danger" style={{ width: "54px", height: "54px" }}>
+                  <BsEnvelope className="text-itsma-red fs-4" />
                 </div>
                 <div>
-                  <h6 className="fw-bold text-dark mb-1">Correo Electrónico Directo</h6>
-                  <a href="mailto:itsma.dgr@gmail.com" className="text-itsma-red fw-medium text-decoration-none mb-0">
+                  <h6 className="mb-1 text-dark fw-bold">Correo Electrónico Directo</h6>
+                  <a href="mailto:itsma.dgr@gmail.com" className="mb-0 text-itsma-red text-decoration-none fw-medium">
                     itsma.dgr@gmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="p-4 rounded-4 border border-light bg-light shadow-sm d-flex align-items-center gap-3">
-                <div className="p-3 rounded-circle bg-danger-subtle text-danger d-flex align-items-center justify-content-center" style={{ width: "54px", height: "54px" }}>
-                  <BsGeoAlt className="fs-4 text-itsma-red" />
+              <div className="d-flex align-items-center gap-3 bg-light shadow-sm p-4 border border-light rounded-4">
+                <div className="d-flex align-items-center justify-content-center bg-danger-subtle p-3 rounded-circle text-danger" style={{ width: "54px", height: "54px" }}>
+                  <BsGeoAlt className="text-itsma-red fs-4" />
                 </div>
                 <div>
-                  <h6 className="fw-bold text-dark mb-1">Oficinas Centrales</h6>
-                  <p className="text-secondary mb-0">Buenos Aires, Argentina</p>
+                  <h6 className="mb-1 text-dark fw-bold">Oficinas Centrales</h6>
+                  <p className="mb-0 text-secondary">Buenos Aires, Argentina</p>
                 </div>
               </div>
             </div>
@@ -121,14 +121,14 @@ export default function ContactPage() {
 
           {/* Right Column: Styled Form Card */}
           <div className="col-lg-7">
-            <div className="itsma-red-card p-4 p-md-5">
-              <h4 className="fw-bold font-serif text-dark mb-4">Envíanos tu consulta</h4>
+            <div className="p-4 p-md-5 itsma-red-card-nh">
+              <h4 className="mb-4 font-serif text-dark fw-bold">Envíanos tu consulta</h4>
 
               {submitted ? (
-                <div className="p-4 text-center rounded-4 bg-light border border-success-subtle my-3">
-                  <BsCheckCircleFill className="text-success display-4 mb-3" />
-                  <h5 className="fw-bold text-dark mb-2">¡Mensaje enviado con éxito!</h5>
-                  <p className="text-secondary mb-3">
+                <div className="bg-light my-3 p-4 border border-success-subtle rounded-4 text-center">
+                  <BsCheckCircleFill className="mb-3 text-success display-4" />
+                  <h5 className="mb-2 text-dark fw-bold">¡Mensaje enviado con éxito!</h5>
+                  <p className="mb-3 text-secondary">
                     Tu consulta ha sido enviada a <strong>itsma.dgr@gmail.com</strong>. Te responderemos a la brevedad.
                   </p>
                   <button
@@ -136,7 +136,7 @@ export default function ContactPage() {
                       setSubmitted(false);
                       setFormData({ nombre: "", empresa: "", email: "", telefono: "", mensaje: "" });
                     }}
-                    className="btn btn-outline-danger btn-sm rounded-pill px-4"
+                    className="px-4 rounded-pill btn-outline-danger btn btn-sm"
                   >
                     Enviar otra consulta
                   </button>
@@ -144,73 +144,73 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="row g-3">
                   <div className="col-md-6">
-                    <label className="form-label fw-semibold text-dark small">Nombre y Apellido *</label>
+                    <label className="text-dark form-label fw-semibold small">Nombre y Apellido *</label>
                     <input
                       type="text"
                       name="nombre"
                       value={formData.nombre}
                       onChange={handleChange}
-                      className="form-control form-control-lg bg-light border-light fs-6"
+                      className="bg-light border-light form-control form-control-lg fs-6"
                       placeholder="Ej: Juan Pérez"
                       required
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <label className="form-label fw-semibold text-dark small">Empresa</label>
+                    <label className="text-dark form-label fw-semibold small">Empresa</label>
                     <input
                       type="text"
                       name="empresa"
                       value={formData.empresa}
                       onChange={handleChange}
-                      className="form-control form-control-lg bg-light border-light fs-6"
+                      className="bg-light border-light form-control form-control-lg fs-6"
                       placeholder="Ej: Logística S.A."
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <label className="form-label fw-semibold text-dark small">Email Corporativo *</label>
+                    <label className="text-dark form-label fw-semibold small">Email Corporativo *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="form-control form-control-lg bg-light border-light fs-6"
+                      className="bg-light border-light form-control form-control-lg fs-6"
                       placeholder="correo@empresa.com"
                       required
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <label className="form-label fw-semibold text-dark small">Teléfono / WhatsApp</label>
+                    <label className="text-dark form-label fw-semibold small">Teléfono / WhatsApp</label>
                     <input
                       type="tel"
                       name="telefono"
                       value={formData.telefono}
                       onChange={handleChange}
-                      className="form-control form-control-lg bg-light border-light fs-6"
+                      className="bg-light border-light form-control form-control-lg fs-6"
                       placeholder="+54 11 ..."
                     />
                   </div>
 
                   <div className="col-12">
-                    <label className="form-label fw-semibold text-dark small">Mensaje / Consulta *</label>
+                    <label className="text-dark form-label fw-semibold small">Mensaje / Consulta *</label>
                     <textarea
                       rows={4}
                       name="mensaje"
                       value={formData.mensaje}
                       onChange={handleChange}
-                      className="form-control bg-light border-light fs-6"
+                      className="bg-light border-light form-control fs-6"
                       placeholder="Cuéntanos tus necesidades de embalaje o transporte multimodal..."
                       required
                     />
                   </div>
 
-                  <div className="col-12 mt-4">
+                  <div className="mt-4 col-12">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="btn text-white w-100 py-3 rounded-pill fw-bold d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                      className="d-flex align-items-center justify-content-center gap-2 shadow-sm py-3 rounded-pill w-100 text-white btn fw-bold"
                       style={{ background: "linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%)", border: "none" }}
                     >
                       {isSubmitting ? (
