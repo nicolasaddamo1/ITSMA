@@ -50,7 +50,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h6 className="fw-bold mb-0">Oficinas Centrales</h6>
-                  <p className="text-secondary mb-0">Buenos Aires, Argentina</p>
+                  <p className="text-secondary mb-0">Av. Córdoba 873 5° A (entre Suipacha y Esmeralda), CABA</p>
                 </div>
               </div>
             </div>

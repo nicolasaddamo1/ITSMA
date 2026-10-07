@@ -113,7 +113,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h6 className="mb-1 text-dark fw-bold">Oficinas Centrales</h6>
-                  <p className="mb-0 text-secondary">Buenos Aires, Argentina</p>
+                  <p className="mb-0 text-secondary">Av. Córdoba 873 5° A (entre Suipacha y Esmeralda), CABA</p>
                 </div>
               </div>
             </div>

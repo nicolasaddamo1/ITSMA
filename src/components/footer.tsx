@@ -49,7 +49,7 @@ function Footer() {
                             <a href="" className='bg-light shadow p-2 rounded-circle link-body-emphasis'>
                                 <FaTiktok size={25} />
                             </a>
-                            <a href="" className='bg-light shadow p-2 rounded-circle link-body-emphasis'>
+                            <a href="https://www.instagram.com/itsma.solucionesintegrales/" target="_blank" rel="noopener noreferrer" className='bg-light shadow p-2 rounded-circle link-body-emphasis' title="Instagram @itsma.solucionesintegrales">
                                 <RiInstagramFill size={25} />
                             </a>
                             {/* <FaInstagramSquare size={25} /> */}
@@ -58,8 +58,9 @@ function Footer() {
                 </div>
                 <div className="gap-2 mb-3 py-2 col-md-3">
                     <h5>Dirección</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7531.706751947722!2d-58.32175408682348!3d-34.693302890093946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333005d7f9e91%3A0x605756da5db8ed8f!2sParrilla%20El%20tano!5e0!3m2!1ses-419!2sar!4v1790279798393!5m2!1ses-419!2sar"
-                        className='w-100' height="300" allowFullScreen={false} loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                    <p className="mb-2 small text-body-secondary fw-medium">Av. Córdoba 873 5° A (entre Suipacha y Esmeralda), CABA</p>
+                    <iframe src="https://maps.google.com/maps?q=Av.+C%C3%B3rdoba+873%2C+Buenos+Aires&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        className='w-100 rounded-3 shadow-sm border-0' height="200" allowFullScreen={false} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" title="Mapa Av Córdoba 873"></iframe>
                 </div>
             </div>
             <div className="my-4 py-4 border-top">

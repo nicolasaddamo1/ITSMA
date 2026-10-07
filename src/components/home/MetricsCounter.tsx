@@ -10,10 +10,10 @@ interface MetricItem {
 }
 
 const metricsData: MetricItem[] = [
-  { target: 10, prefix: "+", suffix: "", label: "años" },
-  { target: 2500, prefix: "+", suffix: "", label: "paquetes" },
+  { target: 20, prefix: "+", suffix: "", label: "Años" },
+  { target: 2500, prefix: "+", suffix: "", label: "Envíos" },
   { target: 30, prefix: "+", suffix: "", label: "Clientes" },
-  { target: 100, prefix: "+", suffix: "", label: "Algo" },
+  { target: 100, prefix: "+", suffix: "", label: "Capacitaciones" },
 ];
 
 export default function MetricsCounter() {

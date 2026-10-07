@@ -11,6 +11,7 @@ import catamp from "@/../assets/certifications photos/catamp.webp"
 import iata from "@/../assets/certifications photos/iata.webp"
 import icao from "@/../assets/certifications photos/icao.webp"
 import prefectura from "@/../assets/certifications photos/prefectura.webp"
+import alberto from "@/../assets/owners photos/Luis Alberto Pascucci.webp"
 function Nosotros() {
     const values = [
         { title: "Mision", text: "Transformar la complejidad de la gestión de mercancías peligrosas en operaciones más seguras, eficientes y confiables, involucrándonos en la realidad de cada empresa, comprendiendo sus desafíos y desarrollando soluciones a medida." },
@@ -37,6 +38,12 @@ function Nosotros() {
             title: "Director de Consultoría y Transformación Operativa",
             description: "Responsable del desarrollo y liderazgo de las soluciones de consultoría, optimización de procesos y metodología Lean de ITSMA."
         },
+        {
+            img: alberto.src,
+            name: "Luis Alberto Pascucci",
+            title: "Responsable de Learning & Development",
+            description: "Formando a los mejores especialistas en mercancías peligrosas. Docente con mas de 40 años de experiencia."
+        },
     ]
     const certifications = [
         {
@@ -61,16 +68,18 @@ function Nosotros() {
         <section className="mt-3 pt-5">
 
             <Hero url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" title="Ayudando a empresas" subtitle="en su distribución" />
-            <div className="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-around gap-3 py-4">
+            <div id="mision-vision" className="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-around gap-3 py-4">
                 {values.map((value) => <Valores key={value.title} title={value.title} text={value.text} />)}
             </div>
 
-            {owners.map((person, i) => {
-                const left = (i % 2) == 0
-                return (
-                    <OwnerCard key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
-            })}
-            <div className="d-flex flex-column gap-3 pt-5">
+            <div id="integrantes">
+                {owners.map((person, i) => {
+                    const left = (i % 2) == 0
+                    return (
+                        <OwnerCard key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
+                })}
+            </div>
+            <div id="como-lo-hacemos" className="d-flex flex-column gap-3 pt-5">
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <b className="fs-3">¿Como lo hacemos?</b>
@@ -85,7 +94,7 @@ function Nosotros() {
                     </p>
                 </div>
             </div>
-            <div className="d-flex flex-column gap-3 py-5">
+            <div id="certificaciones" className="d-flex flex-column gap-3 py-5">
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <b className="fs-3">Certificaciones y más </b>
