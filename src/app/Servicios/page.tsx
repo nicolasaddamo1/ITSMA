@@ -41,7 +41,22 @@ function Page() {
                     <Divider />
                     <h3>Servicios que ofrecemos</h3>
                     <div className='d-flex flex-column align-items-center justify-content-center gap-5 pt-3'>
-                        {services.map((service, i) => <ServiceCard key={service.title} title={service.title} description={service.description} subtitle={service.subtitle} subdescription={service.subDescription} image={service.image} i={i} modalInfo={service.modalInfo} />)}
+                        {services.map((service, i) => {
+                            const serviceIds = ["acondicionamiento", "consultoria", "documentacion", "formacion", "embalajes", "etiquetas"];
+                            return (
+                                <ServiceCard 
+                                    key={service.title} 
+                                    id={serviceIds[i] || `servicio-${i}`}
+                                    title={service.title} 
+                                    description={service.description} 
+                                    subtitle={service.subtitle} 
+                                    subdescription={service.subDescription} 
+                                    image={service.image} 
+                                    i={i} 
+                                    modalInfo={service.modalInfo} 
+                                />
+                            );
+                        })}
                     </div>
                 </div>
             </section>

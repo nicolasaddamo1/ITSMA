@@ -1,4 +1,9 @@
 /* Custom global styles for ITSMA (Red Design System from Figma) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
 :root {
   --itsma-red: #fd0004;
   --itsma-red-dark: #a20a3a;

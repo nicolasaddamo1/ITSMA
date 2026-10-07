@@ -68,16 +68,18 @@ function Nosotros() {
         <section className="mt-3 pt-5">
 
             <Hero url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" title="Ayudando a empresas" subtitle="en su distribución" />
-            <div className="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-around gap-3 py-4">
+            <div id="mision-vision" className="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-around gap-3 py-4">
                 {values.map((value) => <Valores key={value.title} title={value.title} text={value.text} />)}
             </div>
 
-            {owners.map((person, i) => {
-                const left = (i % 2) == 0
-                return (
-                    <OwnerCard key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
-            })}
-            <div className="d-flex flex-column gap-3 pt-5">
+            <div id="integrantes">
+                {owners.map((person, i) => {
+                    const left = (i % 2) == 0
+                    return (
+                        <OwnerCard key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
+                })}
+            </div>
+            <div id="como-lo-hacemos" className="d-flex flex-column gap-3 pt-5">
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <b className="fs-3">¿Como lo hacemos?</b>
@@ -92,7 +94,7 @@ function Nosotros() {
                     </p>
                 </div>
             </div>
-            <div className="d-flex flex-column gap-3 py-5">
+            <div id="certificaciones" className="d-flex flex-column gap-3 py-5">
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <b className="fs-3">Certificaciones y más </b>

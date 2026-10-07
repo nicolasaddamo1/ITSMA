@@ -1,4 +1,4 @@
-.bgBlur{
+.bgBlur {
     background-color: rgba(255, 255, 255, 0.35);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -6,19 +6,76 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-.sizeIcon{
+.sizeIcon {
     height: 3rem;
     width: 3rem;
 }
+
 .currentPageLink {
-    /* color:#f0c !important */
-    /* color: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%) ; */
     background: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    scale:105%;
-      transition: all;
-    transition-duration: 200ms;
+    font-weight: 700;
+}
 
+.dropdownContainer {
+    position: relative;
+}
+
+/* Invisible bridge extending down from nav-item so hover is NEVER lost */
+.dropdownContainer::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -30px;
+    right: -30px;
+    height: 35px;
+    z-index: 1040;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    min-width: 260px;
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-radius: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+}
+
+.dropdownContainer:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    border-radius: 0px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dropdownItem:hover {
+    background-color: #ffffff;
+    color: #fd0004;
 }
