@@ -21,7 +21,7 @@ interface ServiceItem {
   icon: React.ReactNode;
   title: string;
   badge: string;
-  summary: string;
+  summary: React.ReactNode;
   highlights: string[];
 }
 
@@ -45,11 +45,12 @@ const servicesData: ServiceItem[] = [
     title: "Consultoría y Asesoramiento Integral",
     badge: "Asesoría Técnica",
     summary:
-      "Transformamos la complejidad de las mercancías peligrosas en una gestión ordenada y eficiente. Brindamos interpretación normativa, clasificación y acompañamiento técnico continuo.",
+      "Analizamos tu operación, interpretamos la normativa y desarrollamos soluciones a medida para una gestión segura y eficiente de mercancías peligrosas.",
     highlights: [
       "Interpretación de normativa aérea, marítima y terrestre",
-      "Clasificación técnica de sustancias y artículos",
-      "Socios técnicos para gestión continua",
+      "Clasificación técnica de mercancías peligrosas",
+      "Análisis y mejora de procesos operativos",
+      "Acompañamiento técnico especializado y continuo",
     ],
   },
   {
@@ -61,8 +62,8 @@ const servicesData: ServiceItem[] = [
       "Desarrollamos, revisamos y auditamos la documentación técnica para embarques multimodales, asegurando la coherencia entre carga, etiquetado y formularios legales.",
     highlights: [
       "Aéreo: DGD, e-DGD y AWB",
-      "Marítimo: Formulario IMDG y Certificado de Arrumazón",
-      "Terrestre: Fichas de Emergencia y Declaraciones",
+      "Marítimo: Formulario IMDG, Certificado de Arrumazón y Manifiesto de Mercancías Peligrosas",
+      "Terrestre: Fichas de Emergencia, Declaraciones, Remito y Carta de Porte",
     ],
   },
   {
@@ -71,11 +72,11 @@ const servicesData: ServiceItem[] = [
     title: "Transporte Aéreo",
     badge: "Modo de Transporte",
     summary:
-      "Acondicionamiento y preparación experta bajo reglamentación IATA/OACI. Verificación estricta de embalajes de uso aéreo, cantidades permitidas y etiquetado específico.",
+      "Marcado y etiquetado experto bajo reglamentación IATA/OACI. Verificación estricta de embalajes de uso aéreo, cantidades permitidas y etiquetado específico.",
     highlights: [
       "Cumplimiento normativo IATA / OACI",
-      "Acondicionamiento de bultos y paquetes aéreos",
-      "Minimización de rechazos en rampa",
+      "Minimizar el rechazo de la carga",
+      "Asesoramiento de envío",
     ],
   },
   {
@@ -96,12 +97,16 @@ const servicesData: ServiceItem[] = [
     icon: <BsTruck className="text-itsma-red fs-2" />,
     title: "Transporte Terrestre",
     badge: "Modo de Transporte",
-    summary:
-      "Adecuación completa a normativas nacionales e internacionales de transporte por carretera. Emisión de Fichas de Emergencia y marcado de unidades de carga.",
+    summary: (
+      <>
+        Incorpora al ordenamiento argentino el régimen MERCOSUR para transporte terrestre de mercancías peligrosas y establece requisitos sobre documentación, marcado, etiquetado, rótulos y paneles. <strong>Basado en la </strong><strong className="text-danger fw-bold">Resolución SOyTN N.° 64/2022</strong>
+      </>
+    ),
     highlights: [
-      "Transporte por carretera seguro y regulado",
-      "Fichas de Emergencia y marcado de unidad",
-      "Distribución nacional y transfronteriza",
+      "Documentación: remito y carta de porte",
+      "Manifiesto de carga",
+      "Ficha de emergencia",
+      "Asesoramiento en selección de rótulos de riesgo, paneles de seguridad, ubicación y colocación",
     ],
   },
   {
@@ -160,13 +165,26 @@ export default function ServicesSection() {
     setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
   };
 
+  // Auto-play carousel, paused when hovered OR when modal is open
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || activeModalService !== null) return;
     const timer = setInterval(() => {
       nextSlide();
     }, 4500);
     return () => clearInterval(timer);
-  }, [activeIndex, isPaused]);
+  }, [activeIndex, isPaused, activeModalService]);
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (activeModalService) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [activeModalService]);
 
   // Compute precise 3D transform relative to active index
   const getCardStyle = (index: number) => {
@@ -269,7 +287,7 @@ export default function ServicesSection() {
                 }}
               >
                 <div
-                  className={`${isCenter ? "itsma-red-card" : "itsma-red-card-secondary"
+                  className={`${isCenter ? "itsma-red-card" : "itsma-red-card-nh opacity-75"
                     } p-4 d-flex flex-column justify-content-between h-100`}
                 >
                   <div>
@@ -302,11 +320,14 @@ export default function ServicesSection() {
                   {/* Action Button */}
                   <div className="pt-3 border-light border-top text-center">
                     <button
+                      disabled={!isCenter}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setActiveModalService(item);
+                        if (isCenter) {
+                          setActiveModalService(item);
+                        }
                       }}
-                      className={`btn btn-sm w-100 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2 ${isCenter ? "btn-danger" : "btn-outline-danger"
+                      className={`btn btn-sm w-100 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2 ${isCenter ? "btn-danger" : "btn-outline-secondary opacity-50 pe-none"
                         }`}
                     >
                       Saber más
