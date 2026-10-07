@@ -1,5 +1,5 @@
 import acond from "@/../assets/services photos/Acond y optm.webp"
-import pelig from "@/../assets/services photos/Doc mercancias Pelig.webp"
+import pelig from "@/../assets/services photos/Doc mercancias Peligr.webp"
 import asesor from "@/../assets/services photos/consult y asesor.webp"
 import embalajes from "@/../assets/services photos/embalajes.webp"
 import etiq from "@/../assets/services photos/etiq y marc.webp"

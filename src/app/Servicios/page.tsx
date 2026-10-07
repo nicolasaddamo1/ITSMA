@@ -1,14 +1,8 @@
 import Divider from '@/components/divider/Divider'
 import Hero from '@/components/hero/Hero'
 import ServiceCard from '@/components/ServiceCard/ServiceCard'
-import acond from "@/../assets/services photos/Acond y optm.webp"
-import pelig from "@/../assets/services photos/Doc mercancias Pelig.webp"
-import asesor from "@/../assets/services photos/consult y asesor.webp"
-import embalajes from "@/../assets/services photos/embalajes.webp"
-import etiq from "@/../assets/services photos/etiq y marc.webp"
-import formacion from "@/../assets/services photos/formacion.webp"
 import { services } from '../../../assets/servicesText/ServicesText'
-
+import heroImage from "@/../assets/services photos/Carga de Lujo en el Aeropuerto.webp"
 
 
 function Page() {
@@ -35,7 +29,7 @@ function Page() {
     // ]
     return (
         <article>
-            <Hero title="Acompañando a empresas " subtitle="en su distribución" url="https://www.getac.com/content/dam/uploads/2022/10/fleetmgt_cover.png" />
+            <Hero title="Acompañando a empresas " subtitle="en su distribución" url={heroImage.src} />
             <section>
                 <div className='d-flex flex-column align-items-center gap-4 py-5'>
                     <Divider />
