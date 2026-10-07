@@ -1,0 +1,33 @@
+.textColor{
+    background: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.serviceCard {
+    width: 100%;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.textContainer {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .imageContainer {
+        width: 50%;
+    }
+
+    .textContainer {
+        width: 50%;
+    }
+}

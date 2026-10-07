@@ -1,0 +1,113 @@
+.imageContainer {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    
+}
+.textColor{
+    background: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.image {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay i {
+    color: white;
+    font-size: 2rem;
+}
+
+.imageContainer:hover .image {
+    transform: scale(1.05);
+}
+
+.imageContainer:hover .overlay {
+    opacity: 1;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .imageContainer {
+        width: 50%;
+        
+    }
+}
+/* Modal */
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+
+    padding: 2rem;
+
+    overflow-y: auto;
+
+    background: white;
+    border-radius: 0.75rem;
+}
+
+.modalImage {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.closeButton {
+    position:absolute;
+    top: 0.75rem;
+    right: 0rem;
+    
+    border: none;
+    background: transparent;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    cursor: pointer;
+}

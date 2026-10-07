@@ -27,7 +27,7 @@ interface ServiceItem {
 const servicesData: ServiceItem[] = [
   {
     id: 1,
-    icon: <BsBoxSeam className="fs-2 text-itsma-red" />,
+    icon: <BsBoxSeam className="text-itsma-red fs-2" />,
     title: "Acondicionamiento y Optimización de Carga",
     badge: "Operación en Planta",
     summary:
@@ -40,7 +40,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 2,
-    icon: <BsHeadset className="fs-2 text-itsma-red" />,
+    icon: <BsHeadset className="text-itsma-red fs-2" />,
     title: "Consultoría y Asesoramiento Integral",
     badge: "Asesoría Técnica",
     summary:
@@ -53,7 +53,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 3,
-    icon: <BsFileEarmarkCheck className="fs-2 text-itsma-red" />,
+    icon: <BsFileEarmarkCheck className="text-itsma-red fs-2" />,
     title: "Documentación de Mercancías Peligrosas",
     badge: "Gestión Documental",
     summary:
@@ -66,7 +66,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 4,
-    icon: <BsAirplane className="fs-2 text-itsma-red" />,
+    icon: <BsAirplane className="text-itsma-red fs-2" />,
     title: "Transporte Aéreo",
     badge: "Modo de Transporte",
     summary:
@@ -79,7 +79,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 5,
-    icon: <BsWater className="fs-2 text-itsma-red" />,
+    icon: <BsWater className="text-itsma-red fs-2" />,
     title: "Transporte Marítimo",
     badge: "Modo de Transporte",
     summary:
@@ -92,7 +92,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 6,
-    icon: <BsTruck className="fs-2 text-itsma-red" />,
+    icon: <BsTruck className="text-itsma-red fs-2" />,
     title: "Transporte Terrestre",
     badge: "Modo de Transporte",
     summary:
@@ -105,7 +105,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 7,
-    icon: <BsTag className="fs-2 text-itsma-red" />,
+    icon: <BsTag className="text-itsma-red fs-2" />,
     title: "Etiquetas y Marcas",
     badge: "Insumos & Identificación",
     summary:
@@ -118,7 +118,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 8,
-    icon: <BsMortarboard className="fs-2 text-itsma-red" />,
+    icon: <BsMortarboard className="text-itsma-red fs-2" />,
     title: "Formación desde el Inicio",
     badge: "Capacitación CBTA",
     summary:
@@ -131,7 +131,7 @@ const servicesData: ServiceItem[] = [
   },
   {
     id: 9,
-    icon: <BsBoxSeam className="fs-2 text-itsma-red" />,
+    icon: <BsBoxSeam className="text-itsma-red fs-2" />,
     title: "Embalajes 4G homologados",
     badge: "Embalajes Homologados",
     summary:
@@ -232,19 +232,19 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="servicios" className="py-5 bg-white position-relative overflow-hidden">
-      <div className="container py-lg-4">
+    <section id="servicios" className="position-relative bg-white py-5 overflow-hidden">
+      <div className="py-lg-4 container">
         {/* Section Header with generous bottom margin to prevent overlap */}
-        <div className="text-center max-w-3xl mx-auto mb-5 pb-3">
-          <div className="red-line-accent mb-2" />
-          <h2 className="display-6 font-serif fw-bold text-dark mb-3">
+        <div className="mx-auto mb-5 pb-3 max-w-3xl text-center">
+          <div className="mb-2 red-line-accent" />
+          <h2 className="mb-3 font-serif text-dark display-6 fw-bold">
             Servicios que ofrecemos
           </h2>
         </div>
 
         {/* 3D Focus Blur Carousel Viewport with explicit height */}
         <div
-          className="position-relative w-100 my-4"
+          className="position-relative my-4 w-100"
           style={{ height: "420px" }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -273,7 +273,7 @@ export default function ServicesSection() {
                 >
                   <div>
                     {/* Icon */}
-                    <div className="text-center mb-3">
+                    <div className="mb-3 text-center">
                       <div
                         className={`d-inline-flex align-items-center justify-content-center p-3 rounded-circle border ${isCenter ? "border-danger bg-danger-subtle" : "border-secondary-subtle bg-light"
                           }`}
@@ -293,13 +293,13 @@ export default function ServicesSection() {
                     </h5>
 
                     {/* Summary */}
-                    <p className="text-secondary small mb-0 text-center lh-base">
+                    <p className="mb-0 text-secondary text-center small lh-base">
                       {item.summary}
                     </p>
                   </div>
 
                   {/* Action Button */}
-                  <div className="pt-3 border-top border-light text-center">
+                  <div className="pt-3 border-light border-top text-center">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -320,7 +320,7 @@ export default function ServicesSection() {
           {/* Floating Red Arrow Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="position-absolute top-50 start-0 translate-middle-y btn btn-light rounded-circle p-2 shadow-lg border border-danger text-itsma-red d-flex align-items-center justify-content-center"
+            className="top-50 position-absolute d-flex align-items-center justify-content-center shadow-lg p-2 border border-danger rounded-circle text-itsma-red translate-middle-y start-0 btn btn-light"
             style={{ width: "44px", height: "44px", zIndex: 30, left: "5px" }}
             aria-label="Anterior Servicio"
           >
@@ -329,7 +329,7 @@ export default function ServicesSection() {
 
           <button
             onClick={nextSlide}
-            className="position-absolute top-50 end-0 translate-middle-y btn btn-light rounded-circle p-2 shadow-lg border border-danger text-itsma-red d-flex align-items-center justify-content-center"
+            className="top-50 position-absolute d-flex align-items-center justify-content-center shadow-lg p-2 border border-danger rounded-circle text-itsma-red translate-middle-y end-0 btn btn-light"
             style={{ width: "44px", height: "44px", zIndex: 30, right: "5px" }}
             aria-label="Siguiente Servicio"
           >
@@ -338,7 +338,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Carousel Pagination Dots placed right below cards */}
-        <div className="d-flex justify-content-center align-items-center gap-2 mt-3 pt-1" style={{ minHeight: "24px" }}>
+        <div className="d-flex align-items-center justify-content-center gap-2 mt-3 pt-1">
           {servicesData.map((_, dotIdx) => (
             <button
               key={dotIdx}
@@ -353,7 +353,7 @@ export default function ServicesSection() {
       {/* Detail Modal */}
       {activeModalService && (
         <div
-          className="modal fade show d-block"
+          className="d-block modal fade show"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.65)", zIndex: 1060 }}
           onClick={() => setActiveModalService(null)}
         >
@@ -361,14 +361,15 @@ export default function ServicesSection() {
             className="modal-dialog modal-dialog-centered modal-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="modal-content rounded-3 border-2 border-danger shadow-lg">
-              <div className="modal-header border-bottom p-4 bg-light">
+            <div className="shadow-lg border-0 rounded-4 modal-content">
+              <div className="bg-light p-4 border-bottom modal-header">
                 <div className="d-flex align-items-center gap-3">
-                  <div className="p-3 bg-white rounded-3 border border-danger">
+                  <div className="bg-white p-3 border border-danger rounded-3">
                     {activeModalService.icon}
                   </div>
                   <div>
-                    <h4 className="modal-title fw-bold text-itsma-red mb-0">
+
+                    <h4 style={{ color: "linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%)" }} className="mb-0 modal-title fw-bold">
                       {activeModalService.title}
                     </h4>
                   </div>
@@ -381,30 +382,30 @@ export default function ServicesSection() {
                 />
               </div>
 
-              <div className="modal-body p-4 p-md-5">
-                <h6 className="fw-bold text-dark mb-2">Resumen de Operación</h6>
-                <p className="lead text-secondary fs-6 mb-4 lh-lg">
+              <div className="p-4 p-md-5 modal-body">
+                <h6 className="mb-2 text-dark fw-bold">Resumen de Operación</h6>
+                <p className="mb-4 text-secondary lead fs-6 lh-lg">
                   {activeModalService.summary}
                 </p>
 
-                <h6 className="fw-bold text-dark mb-3">Puntos Clave del Servicio:</h6>
-                <div className="row g-3 mb-4">
+                <h6 className="mb-3 text-dark fw-bold">Puntos Clave del Servicio:</h6>
+                <div className="mb-4 row g-3">
                   {activeModalService.highlights.map((item, idx) => (
                     <div key={idx} className="col-md-6">
-                      <div className="p-3 bg-light rounded-3 border border-light d-flex align-items-center gap-2">
+                      <div className="d-flex align-items-center gap-2 bg-light p-3 border border-light rounded-3">
                         <span className="text-danger fw-bold fs-5">•</span>
-                        <span className="fw-medium text-dark small">{item}</span>
+                        <span className="text-dark fw-medium small">{item}</span>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="p-4 bg-secondary-subtle rounded-3 mb-0 d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center justify-content-between mb-0 rounded-3 alert alert-danger">
                   <div>
-                    <h6 className="fw-bold mb-1">¿Necesitás este servicio para tu empresa?</h6>
+                    <h6 className="mb-1 fw-bold">¿Necesitás este servicio para tu empresa?</h6>
                     <small>Analizamos tu operación y desarrollamos la solución en tu planta.</small>
                   </div>
-                  <a href="#contacto" onClick={() => setActiveModalService(null)} className="btn btn-danger btn-sm px-3 fw-semibold">
+                  <a href="#contacto" onClick={() => setActiveModalService(null)} className="px-3 btn btn-danger btn-sm fw-semibold">
                     Contactar
                   </a>
                 </div>
