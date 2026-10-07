@@ -3,6 +3,7 @@ import Hero from '@/components/hero/Hero'
 import ServiceCard from '@/components/ServiceCard/ServiceCard'
 import { services } from '../../../assets/servicesText/ServicesText'
 import heroImage from "@/../assets/services photos/Carga de Lujo en el Aeropuerto.webp"
+import TimeCard from '@/components/timeCard/TimeCard'
 
 
 function Page() {
@@ -18,6 +19,9 @@ function Page() {
                         {services.map((service, i) => <ServiceCard key={service.title} title={service.title} description={service.description} subtitle={service.subtitle} subdescription={service.subDescription} image={service.image} i={i} modalInfo={service.modalInfo} />)}
                     </div>
                 </div>
+            </section>
+            <section>
+                <TimeCard />
             </section>
         </article>
     )
