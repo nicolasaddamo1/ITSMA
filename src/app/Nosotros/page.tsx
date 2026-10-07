@@ -11,6 +11,7 @@ import catamp from "@/../assets/certifications photos/catamp.webp"
 import iata from "@/../assets/certifications photos/iata.webp"
 import icao from "@/../assets/certifications photos/icao.webp"
 import prefectura from "@/../assets/certifications photos/prefectura.webp"
+import alberto from "@/../assets/owners photos/Luis Alberto Pascucci.webp"
 function Nosotros() {
     const values = [
         { title: "Mision", text: "Transformar la complejidad de la gestión de mercancías peligrosas en operaciones más seguras, eficientes y confiables, involucrándonos en la realidad de cada empresa, comprendiendo sus desafíos y desarrollando soluciones a medida." },
@@ -36,6 +37,12 @@ function Nosotros() {
             name: "Marcelo Ricci",
             title: "Director de Consultoría y Transformación Operativa",
             description: "Responsable del desarrollo y liderazgo de las soluciones de consultoría, optimización de procesos y metodología Lean de ITSMA."
+        },
+        {
+            img: alberto.src,
+            name: "Luis Alberto Pascucci",
+            title: "Responsable de formación desde el inicio",
+            description: "Formando a los mejores especialistas en mercancías peligrosas. Docente con mas de 25 años de experiencia."
         },
     ]
     const certifications = [
