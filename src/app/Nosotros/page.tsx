@@ -7,6 +7,10 @@ import Certification from "@/components/certification/Certification"
 import fernando from "@/../assets/owners photos/Fernando De Chiano.webp"
 import marcelo from "@/../assets/owners photos/Marcelo Ricci.webp"
 import natalia from "@/../assets/owners photos/Natalia Soledad Arata.webp"
+import catamp from "@/../assets/certifications photos/catamp.webp"
+import iata from "@/../assets/certifications photos/iata.webp"
+import icao from "@/../assets/certifications photos/icao.webp"
+import prefectura from "@/../assets/certifications photos/prefectura.webp"
 function Nosotros() {
     const values = [
         { title: "Mision", text: "Transformar la complejidad de la gestión de mercancías peligrosas en operaciones más seguras, eficientes y confiables, involucrándonos en la realidad de cada empresa, comprendiendo sus desafíos y desarrollando soluciones a medida." },
@@ -36,23 +40,28 @@ function Nosotros() {
     ]
     const certifications = [
         {
-            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPDLKoe7276H3OurclEPKM43LxJFcbaX8it4xqtcp7lh1i5fnwEHl8zao&s=10",
-            title: "cert 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime animi dicta nihil"
+            url: catamp.src,
+            title: "catamp"
         },
         {
-            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPDLKoe7276H3OurclEPKM43LxJFcbaX8it4xqtcp7lh1i5fnwEHl8zao&s=10",
-            title: "cert 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime animi dicta nihil"
+            url: iata.src,
+            title: "iata"
         },
         {
-            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPDLKoe7276H3OurclEPKM43LxJFcbaX8it4xqtcp7lh1i5fnwEHl8zao&s=10",
-            title: "cert 3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime animi dicta nihil "
+            url: icao.src,
+            title: "icao"
         },
+        {
+            url: prefectura.src,
+            title: "prefectura"
+        },
+
     ]
     return (
-        <section className="pt-5 mt-3">
+        <section className="mt-3 pt-5">
 
             <Hero url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" title="Ayudando a empresas" subtitle="en su distribución" />
-            <div className="d-flex flex-column flex-md-row align-items-center justify-content-around py-4">
+            <div className="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-around gap-3 py-4">
                 {values.map((value) => <Valores key={value.title} title={value.title} text={value.text} />)}
             </div>
 
@@ -72,7 +81,7 @@ function Nosotros() {
                         Analizamos cada necesidad y desarrollamos una propuesta exclusiva, integral y a medida, que reúne todo lo que necesitás para gestionar Mercancías Peligrosas: documentación, embalajes, seguros, capacitación y asesoramiento.
                         <br />
                         <br />
-                        <p>Una solución única. Todo resuelto.</p>
+                        <span>Una solución única. Todo resuelto.</span>
                     </p>
                 </div>
             </div>
@@ -80,7 +89,7 @@ function Nosotros() {
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <b className="fs-3">Certificaciones y más </b>
-                    <div className="d-flex flex-column flex-md-row">
+                    <div className="d-flex flex-column flex-md-row align-items-start justify-content-around w-100">
                         {certifications.map((certif) => <Certification key={certif.title} url={certif.url} title={certif.title} />)}
 
                     </div>
