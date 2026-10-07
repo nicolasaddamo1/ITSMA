@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface MetricItem {
   target: number;
@@ -17,6 +18,8 @@ const metricsData: MetricItem[] = [
 ];
 
 export default function MetricsCounter() {
+  const { t } = useLanguage();
+  const metricLabels = [t.metrics.anos, t.metrics.envios, t.metrics.clientes, t.metrics.capacitaciones];
   const sectionRef = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
   const [counts, setCounts] = useState<number[]>(metricsData.map((item) => item.target));
@@ -70,7 +73,7 @@ export default function MetricsCounter() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-4 bg-white">
+    <section id="metricas" ref={sectionRef} className="py-4 bg-white">
       <div className="container">
         <div
           className="p-4 p-lg-5 rounded-4 text-white shadow-lg"
@@ -84,7 +87,7 @@ export default function MetricsCounter() {
                   {counts[index].toLocaleString("es-AR")}
                   {item.suffix}
                 </div>
-                <div className="fs-5 fw-medium text-white opacity-90">{item.label}</div>
+                <div className="fs-5 fw-medium text-white opacity-90">{metricLabels[index]}</div>
               </div>
             ))}
           </div>

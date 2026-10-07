@@ -16,6 +16,8 @@ import {
   BsArrowRight,
 } from "react-icons/bs";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 interface ServiceItem {
   id: number;
   icon: React.ReactNode;
@@ -25,132 +27,24 @@ interface ServiceItem {
   highlights: string[];
 }
 
-const servicesData: ServiceItem[] = [
-  {
-    id: 1,
-    icon: <BsBoxSeam className="text-itsma-red fs-2" />,
-    title: "Acondicionamiento y Optimización de Carga",
-    badge: "Operación en Planta",
-    summary:
-      "Preparamos tu carga de mercancías peligrosas para el transporte (aéreo, terrestre y marítimo) aplicando normativa estricta y principios de Lean Manufacturing directamente en tus instalaciones.",
-    highlights: [
-      "Clasificación, embalaje y etiquetado normativo",
-      "Lean Manufacturing: reducción de tiempos y desperdicios",
-      "Solución prêt-à-porter en planta del cliente",
-    ],
-  },
-  {
-    id: 2,
-    icon: <BsHeadset className="text-itsma-red fs-2" />,
-    title: "Consultoría y Asesoramiento Integral",
-    badge: "Asesoría Técnica",
-    summary:
-      "Analizamos tu operación, interpretamos la normativa y desarrollamos soluciones a medida para una gestión segura y eficiente de mercancías peligrosas.",
-    highlights: [
-      "Interpretación de normativa aérea, marítima y terrestre",
-      "Clasificación técnica de mercancías peligrosas",
-      "Análisis y mejora de procesos operativos",
-      "Acompañamiento técnico especializado y continuo",
-    ],
-  },
-  {
-    id: 3,
-    icon: <BsFileEarmarkCheck className="text-itsma-red fs-2" />,
-    title: "Documentación de Mercancías Peligrosas",
-    badge: "Gestión Documental",
-    summary:
-      "Desarrollamos, revisamos y auditamos la documentación técnica para embarques multimodales, asegurando la coherencia entre carga, etiquetado y formularios legales.",
-    highlights: [
-      "Aéreo: DGD, e-DGD y AWB",
-      "Marítimo: Formulario IMDG, Certificado de Arrumazón y Manifiesto de Mercancías Peligrosas",
-      "Terrestre: Fichas de Emergencia, Declaraciones, Remito y Carta de Porte",
-    ],
-  },
-  {
-    id: 4,
-    icon: <BsAirplane className="text-itsma-red fs-2" />,
-    title: "Transporte Aéreo",
-    badge: "Modo de Transporte",
-    summary:
-      "Marcado y etiquetado experto bajo reglamentación IATA/OACI. Verificación estricta de embalajes de uso aéreo, cantidades permitidas y etiquetado específico.",
-    highlights: [
-      "Cumplimiento normativo IATA / OACI",
-      "Minimizar el rechazo de la carga",
-      "Asesoramiento de envío",
-    ],
-  },
-  {
-    id: 5,
-    icon: <BsWater className="text-itsma-red fs-2" />,
-    title: "Transporte Marítimo",
-    badge: "Modo de Transporte",
-    summary:
-      "Gestión especializada bajo el código IMDG para envíos de ultramar. Asesoramiento en bultos, pallets, contenedores y verificación de compatibilidad de sustancias.",
-    highlights: [
-      "Código IMDG y requisitos de ultramar",
-      "Certificados de arrumazón e insumos",
-      "Seguridad en contenedores y unidades",
-    ],
-  },
-  {
-    id: 6,
-    icon: <BsTruck className="text-itsma-red fs-2" />,
-    title: "Transporte Terrestre",
-    badge: "Modo de Transporte",
-    summary: (
-      <>
-        Incorpora al ordenamiento argentino el régimen MERCOSUR para transporte terrestre de mercancías peligrosas y establece requisitos sobre documentación, marcado, etiquetado, rótulos y paneles. <strong>Basado en la </strong><strong className="text-danger fw-bold">Resolución SOyTN N.° 64/2022</strong>
-      </>
-    ),
-    highlights: [
-      "Documentación: remito y carta de porte",
-      "Manifiesto de carga",
-      "Ficha de emergencia",
-      "Asesoramiento en selección de rótulos de riesgo, paneles de seguridad, ubicación y colocación",
-    ],
-  },
-  {
-    id: 7,
-    icon: <BsTag className="text-itsma-red fs-2" />,
-    title: "Etiquetas y Marcas",
-    badge: "Insumos & Identificación",
-    summary:
-      "Proporcionamos etiquetas de peligro por clase, división y manipulación, junto con asesoramiento técnico para su correcta colocación y cumplimiento normativo.",
-    highlights: [
-      "Etiquetas de peligro y manipulación homologadas",
-      "Marcas de orientación para bultos y pallets",
-      "Asesoramiento para la selección adecuada",
-    ],
-  },
-  {
-    id: 8,
-    icon: <BsMortarboard className="text-itsma-red fs-2" />,
-    title: "Formación desde el Inicio",
-    badge: "Capacitación CBTA",
-    summary:
-      "Desarrollamos manuales y programas de capacitación por competencias (CBTA) para escuelas e instituciones aeronáuticas, adaptados a cada perfil profesional.",
-    highlights: [
-      "Manuales para Pilotos, TCP, Rampa y Despachantes",
-      "Enfoque en competencias reales y gestión de riesgos",
-      "Situaciones prácticas y toma de decisiones",
-    ],
-  },
-  {
-    id: 9,
-    icon: <BsBoxSeam className="text-itsma-red fs-2" />,
-    title: "Embalajes 4G homologados",
-    badge: "Embalajes Homologados",
-    summary:
-      "Ofrecemos cajas de cartón 4G homologadas para el transporte aéreo, marítimo y carretero de mercancías peligrosas (Grupos I, II y III, Tipo V), acompañadas del asesoramiento técnico para elegir la opción adecuada.",
-    highlights: [
-      "Cajas X30 (aéreo, marítimo y carretero - 35,8×35,8×37,3 cm)",
-      "Cajas X7 (aéreo y carretero - 19×16×28 cm)",
-      "Homologación Grupos I, II y III con forro interno y precinto",
-    ],
-  },
+const serviceIcons: React.ReactNode[] = [
+  <BsBoxSeam key="1" className="text-itsma-red fs-2" />,
+  <BsHeadset key="2" className="text-itsma-red fs-2" />,
+  <BsFileEarmarkCheck key="3" className="text-itsma-red fs-2" />,
+  <BsAirplane key="4" className="text-itsma-red fs-2" />,
+  <BsWater key="5" className="text-itsma-red fs-2" />,
+  <BsTruck key="6" className="text-itsma-red fs-2" />,
+  <BsTag key="7" className="text-itsma-red fs-2" />,
+  <BsMortarboard key="8" className="text-itsma-red fs-2" />,
+  <BsBoxSeam key="9" className="text-itsma-red fs-2" />,
 ];
 
 export default function ServicesSection() {
+  const { t } = useLanguage();
+  const servicesData: ServiceItem[] = t.services.items.map((item, idx) => ({
+    ...item,
+    icon: serviceIcons[idx] || serviceIcons[0],
+  }));
   const [activeIndex, setActiveIndex] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const [activeModalService, setActiveModalService] = useState<ServiceItem | null>(null);
@@ -257,7 +151,7 @@ export default function ServicesSection() {
         <div className="mx-auto mb-5 pb-3 max-w-3xl text-center">
           <div className="mb-2 red-line-accent" />
           <h2 className="mb-3 font-serif text-dark display-6 fw-bold">
-            Servicios que ofrecemos
+            {t.services.title}
           </h2>
         </div>
 
@@ -330,7 +224,7 @@ export default function ServicesSection() {
                       className={`btn btn-sm w-100 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2 ${isCenter ? "btn-danger" : "btn-outline-secondary opacity-50 pe-none"
                         }`}
                     >
-                      Saber más
+                      {t.services.learnMore}
                       <BsArrowRight />
                     </button>
                   </div>
@@ -400,17 +294,17 @@ export default function ServicesSection() {
                   type="button"
                   className="btn-close"
                   onClick={() => setActiveModalService(null)}
-                  aria-label="Cerrar"
+                  aria-label={t.nav.cerrar}
                 />
               </div>
 
               <div className="p-4 p-md-5 modal-body">
-                <h6 className="mb-2 text-dark fw-bold">Resumen de Operación</h6>
+                <h6 className="mb-2 text-dark fw-bold">{t.services.modalSummaryTitle}</h6>
                 <p className="mb-4 text-secondary lead fs-6 lh-lg">
                   {activeModalService.summary}
                 </p>
 
-                <h6 className="mb-3 text-dark fw-bold">Puntos Clave del Servicio:</h6>
+                <h6 className="mb-3 text-dark fw-bold">{t.services.modalHighlightsTitle}</h6>
                 <div className="mb-4 row g-3">
                   {activeModalService.highlights.map((item, idx) => (
                     <div key={idx} className="col-md-6">
@@ -424,11 +318,11 @@ export default function ServicesSection() {
 
                 <div className="d-flex align-items-center justify-content-between bg-secondary-subtle mb-0 p-4 rounded-3">
                   <div>
-                    <h6 className="mb-1 fw-bold">¿Necesitás este servicio para tu empresa?</h6>
-                    <small>Analizamos tu operación y desarrollamos la solución en tu planta.</small>
+                    <h6 className="mb-1 fw-bold">{t.services.modalCtaTitle}</h6>
+                    <small>{t.services.modalCtaSubtitle}</small>
                   </div>
                   <Link href="/Contacto" onClick={() => setActiveModalService(null)} className="px-3 btn btn-danger btn-sm fw-semibold">
-                    Contactar
+                    {t.services.modalContactBtn}
                   </Link>
                 </div>
               </div>

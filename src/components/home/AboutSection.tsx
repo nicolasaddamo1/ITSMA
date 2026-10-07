@@ -3,8 +3,11 @@
 import Link from "next/link";
 import React from "react";
 import { BsPlayCircleFill, BsArrowRight } from "react-icons/bs";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function AboutSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="nosotros" className="py-5 bg-white border-top">
       <div className="container py-lg-4">
@@ -12,34 +15,29 @@ export default function AboutSection() {
           <div className="col-lg-6">
             <div className="red-line-accent mb-2" />
             <h2 className="display-6 font-serif fw-bold text-dark mb-4">
-              Nosotros
+              {t.about.title}
             </h2>
             <p className="lead text-secondary mb-4 lh-base">
-              Somos una consultora joven, con{" "}
+              {t.about.p1}
               <span className="text-itsma-red fw-bold">
-                experiencia y conocimiento
-              </span>{" "}
-              especializado en{" "}
-              <span className="text-itsma-red fw-bold">
-                Mercancías Peligrosas.
-              </span>{" "}
-              Comprendemos la realidad de cada empresa,
-              anticipamos sus desafíos y  {" "}
-              <span> {" "}
-                transformamos la complejidad en {" "}
-                <span className="text-itsma-red fw-bold">
-                  soluciones estratégicas,
-                </span>{" "}
-                seguras y a medida
+                {t.about.pHighlight1}
               </span>
-              .
+              {t.about.p2}
+              <span className="text-itsma-red fw-bold">
+                {t.about.pHighlight2}
+              </span>
+              {t.about.p3}
+              <span className="text-itsma-red fw-bold">
+                {t.about.pHighlight3}
+              </span>
+              {t.about.p4}
             </p>
 
             <Link
               href="/Nosotros"
               className="text-itsma-red fw-semibold text-decoration-none d-inline-flex align-items-center gap-2 fs-6 hover-underline"
             >
-              Conocé más de nosotros
+              {t.about.cta}
               <BsArrowRight />
             </Link>
           </div>

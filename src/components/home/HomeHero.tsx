@@ -2,8 +2,10 @@
 
 import React from "react";
 import Icon from "../svgs/icon/icon";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function HomeHero() {
+  const { t } = useLanguage();
   return (
     <section id="inicio" className="w-100 bg-white p-0 overflow-hidden position-relative">
       <div className="w-100 position-relative">
@@ -55,7 +57,7 @@ export default function HomeHero() {
                 paintOrder: "stroke fill",
               }}
             >
-              SOLUCIONES INTEGRALES
+              {t.hero.title}
             </h1>
 
             {/* Subtítulo EN MERCANCÍAS PELIGROSAS MULTIMODAL */}
@@ -68,7 +70,7 @@ export default function HomeHero() {
                 paintOrder: "stroke fill",
               }}
             >
-              EN MERCANCÍAS PELIGROSAS MULTIMODAL
+              {t.hero.subtitle}
             </p>
           </div>
         </div>

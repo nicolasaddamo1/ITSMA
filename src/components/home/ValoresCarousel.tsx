@@ -2,46 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { BsShieldCheck, BsChevronLeft, BsChevronRight } from "react-icons/bs";
-
-const valores = [
-  {
-    title: "Seguridad",
-    description:
-      "La seguridad es el principio que guía cada decisión, cada solución y cada relación que construimos.",
-  },
-  {
-    title: "Integridad",
-    description:
-      "Actuamos con honestidad, transparencia y ética, haciendo siempre lo correcto, aun cuando nadie nos esté mirando.",
-  },
-  {
-    title: "Cercanía",
-    description:
-      "Nos involucramos con nuestros clientes, conocemos su realidad y construimos relaciones basadas en confianza, respeto y acompañamiento.",
-  },
-  {
-    title: "Adaptabilidad",
-    description:
-      "No creemos en soluciones estándar. Entendemos que cada empresa, cada operación y cada desafío son diferentes, y nos adaptamos para encontrar la respuesta adecuada.",
-  },
-  {
-    title: "Excelencia",
-    description:
-      "Buscamos hacer las cosas bien, mejorar continuamente y superar las expectativas de nuestros clientes.",
-  },
-  {
-    title: "Innovación",
-    description:
-      "Cuestionamos las formas tradicionales de hacer las cosas y buscamos nuevas maneras de generar valor, optimizar procesos y transformar desafíos en oportunidades.",
-  },
-  {
-    title: "Compromiso",
-    description:
-      "Nos involucramos de verdad. Asumimos cada desafío de nuestros clientes como propio y trabajamos para que nuestras soluciones produzcan resultados concretos.",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ValoresCarousel() {
+  const { t } = useLanguage();
+  const valoresList = t.valores.items;
   const [startIndex, setStartIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
@@ -62,7 +27,7 @@ export default function ValoresCarousel() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const total = valores.length;
+  const total = valoresList.length;
 
   const nextSlide = () => {
     setStartIndex((prev) => (prev + 1) % total);
@@ -78,13 +43,13 @@ export default function ValoresCarousel() {
       nextSlide();
     }, 4000);
     return () => clearInterval(timer);
-  }, [startIndex, isPaused, cardsToShow]);
+  }, [startIndex, isPaused, cardsToShow, total]);
 
   // Compute visible cards for continuous 360 loop
   const visibleCards = [];
   for (let i = 0; i < cardsToShow; i++) {
     const cardIdx = (startIndex + i) % total;
-    visibleCards.push({ ...valores[cardIdx], idx: cardIdx });
+    visibleCards.push({ ...valoresList[cardIdx], idx: cardIdx });
   }
 
   return (
@@ -94,7 +59,7 @@ export default function ValoresCarousel() {
         <div className="mx-auto mb-5 max-w-2xl text-center">
           <div className="mb-2 red-line-accent" />
           <h2 className="mb-3 font-serif text-dark display-6 fw-bold">
-            Valores ITSMA
+            {t.valores.title}
           </h2>
         </div>
 
@@ -164,7 +129,7 @@ export default function ValoresCarousel() {
 
         {/* 7 Red Dots Indicator for 100% full continuous rotation */}
         <div className="d-flex align-items-center justify-content-center gap-2 mt-4 pt-2" style={{ minHeight: "24px" }}>
-          {valores.map((val, dotIdx) => (
+          {valoresList.map((val, dotIdx) => (
             <button
               key={val.title}
               type="button"

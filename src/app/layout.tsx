@@ -30,6 +30,8 @@ export const metadata: Metadata = {
   description: "Asesoramiento, embalaje personalizado y protección logística para empresas.",
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: {
@@ -38,10 +40,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${firaSans.variable} ${roboto.variable} ${robotoSlab.variable} ${firaSans.className}`}>
-        <Header />
-        {children}
-        <Footer />
-        <BootstrapClient />
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+          <BootstrapClient />
+        </LanguageProvider>
       </body>
     </html>
   );

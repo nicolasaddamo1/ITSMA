@@ -79,3 +79,134 @@
     background-color: #ffffff;
     color: #fd0004;
 }
+
+/* Hamburger button in mobile navbar */
+.hamburgerBtn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #a20a3a;
+    padding: 6px 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hamburgerBtn:hover {
+    color: #fd0004;
+    transform: scale(1.05);
+}
+
+/* Mobile Drawer Overlay */
+.drawerBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 1100;
+    animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Offcanvas Drawer matching screenshot */
+.drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 78vw;
+    max-width: 290px;
+    background-color: #ffffff;
+    z-index: 1110;
+    padding: 24px 22px;
+    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    animation: slideInLeft 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.drawerHeader {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.drawerCloseBtn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fd0004;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 6px;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.drawerCloseBtn:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+.drawerNavList {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.drawerLink {
+    color: #475569;
+    font-size: 1.12rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease, transform 0.15s ease;
+    display: block;
+}
+
+.drawerLink:hover {
+    color: #fd0004;
+}
+
+.drawerActiveLink {
+    color: #fd0004 !important;
+    font-weight: 700;
+}
+
+.drawerFlagsContainer {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+/* Web/Desktop Flags Container */
+.desktopFlagsContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 18px;
+    padding-left: 14px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
