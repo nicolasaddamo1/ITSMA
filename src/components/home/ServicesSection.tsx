@@ -400,7 +400,7 @@ export default function ServicesSection() {
                   ))}
                 </div>
 
-                <div className="d-flex align-items-center justify-content-between mb-0 rounded-3 alert alert-danger">
+                <div className="d-flex align-items-center justify-content-between bg-secondary-subtle mb-0 p-4 rounded-3">
                   <div>
                     <h6 className="mb-1 fw-bold">¿Necesitás este servicio para tu empresa?</h6>
                     <small>Analizamos tu operación y desarrollamos la solución en tu planta.</small>
