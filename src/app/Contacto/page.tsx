@@ -29,20 +29,19 @@ export default function ContactPage() {
     setErrorMsg("");
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/itsma.dgr@gmail.com", {
+      const fd = new FormData();
+      fd.append("Nombre", formData.nombre);
+      fd.append("Empresa", formData.empresa || "No especificada");
+      fd.append("Email", formData.email);
+      fd.append("Telefono", formData.telefono || "No especificado");
+      fd.append("Mensaje", formData.mensaje);
+      fd.append("_subject", `Nueva consulta Web ITSMA: ${formData.nombre}`);
+      fd.append("_captcha", "false");
+      fd.append("_template", "table");
+
+      const response = await fetch("https://formsubmit.co/ajax/itsma.dgr@mail.com", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          Nombre: formData.nombre,
-          Empresa: formData.empresa || "No especificada",
-          Email: formData.email,
-          Telefono: formData.telefono || "No especificado",
-          Mensaje: formData.mensaje,
-          _subject: `Nueva consulta Web ITSMA: ${formData.nombre}`,
-        }),
+        body: fd,
       });
 
       if (response.ok) {
@@ -66,7 +65,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `Nombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nEmail: ${formData.email}\n\nMensaje:\n${formData.mensaje}`
     );
-    window.location.href = `mailto:itsma.dgr@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:itsma.dgr@mail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -101,8 +100,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h6 className="mb-1 text-dark fw-bold">Correo Electrónico Directo</h6>
-                  <a href="mailto:itsma.dgr@gmail.com" className="mb-0 text-itsma-red text-decoration-none fw-medium">
-                    itsma.dgr@gmail.com
+                  <a href="mailto:itsma.dgr@mail.com" className="mb-0 text-itsma-red text-decoration-none fw-medium">
+                    itsma.dgr@mail.com
                   </a>
                 </div>
               </div>
@@ -129,7 +128,7 @@ export default function ContactPage() {
                   <BsCheckCircleFill className="mb-3 text-success display-4" />
                   <h5 className="mb-2 text-dark fw-bold">¡Mensaje enviado con éxito!</h5>
                   <p className="mb-3 text-secondary">
-                    Tu consulta ha sido enviada a <strong>itsma.dgr@gmail.com</strong>. Te responderemos a la brevedad.
+                    Tu consulta ha sido enviada a <strong>itsma.dgr@mail.com</strong>. Te responderemos a la brevedad.
                   </p>
                   <button
                     onClick={() => {
