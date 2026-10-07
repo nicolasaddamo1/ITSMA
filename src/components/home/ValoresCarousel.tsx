@@ -127,7 +127,7 @@ export default function ValoresCarousel() {
                       : "col-4"
                 }
               >
-                <div className="d-flex flex-column justify-content-between p-4 h-100 itsma-red-card">
+                <div className="d-flex flex-column justify-content-between p-4 h-100">
                   <div
                     className="d-flex flex-column justify-content-between p-4 h-100 itsma-red-card"
                     style={{ minHeight: "240px" }}

@@ -37,7 +37,7 @@ function Page() {
         <article>
             <Hero title="Acompañando a empresas " subtitle="en su distribución" url="https://www.getac.com/content/dam/uploads/2022/10/fleetmgt_cover.png" />
             <section>
-                <div className='d-flex flex-column align-items-center gap-4 pt-5'>
+                <div className='d-flex flex-column align-items-center gap-4 py-5'>
                     <Divider />
                     <h3>Servicios que ofrecemos</h3>
                     <div className='d-flex flex-column align-items-center justify-content-center gap-5 pt-3'>
