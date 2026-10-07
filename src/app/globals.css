@@ -102,6 +102,13 @@ main {
 .text-itsma-red {
   color: var(--itsma-red) !important;
 }
+.text-itsma-red-gradient {
+   background: var(--itsma-red-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+}
 
 .bg-itsma-red {
   background: var(--itsma-red-gradient) !important;

@@ -1,0 +1,129 @@
+.line{
+    background: linear-gradient(225deg, #FD0004 0%, #A20A3A 70.67%);
+}
+
+.xAxis{
+    position:absolute;
+    width: 800px;
+    height:5px;
+    margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.yAxis{
+    position:absolute;
+    width: 5px;
+    height:30px;
+    margin:auto;
+    top:0px;
+    bottom:15px;
+    left:0px;
+    right:0px;
+}
+.topLine{
+    left:-650px;
+    bottom:25px
+}
+.bottomLine{
+    left:-750px;
+    bottom:-25px
+}
+.topLine2{
+    left:-50px;
+    bottom:25px
+}
+.bottomLine2{
+    left:-150px;
+    bottom:-25px
+}
+.topLine3{
+    left:600px;
+    bottom:25px
+}
+.bottomLine3{
+    left:500px;
+    bottom:-25px
+}
+.timeLineContainer{
+    position:relative;
+    width: 1000px;
+    height: 20rem;
+}
+.timeLineMobileContainer{
+}
+.yAxisMobile{
+    position:absolute;
+    width: 5px;
+    height:900px;
+    margin:auto;
+    z-index: -10;
+    top:0px;
+    bottom:15px;
+    left:0px;
+    right:0px;
+}
+@media (max-width: 1023px) {
+    .timeLineContainer {
+        display:none !important;
+    }
+}
+@media (min-width: 1024px) {
+    .timeLineMobileContainer {
+        display:none !important;
+    }
+}
+.cardContainer{
+    position:absolute;
+    width: 250px;
+    max-height: 500px;
+    min-height: 500px;
+    margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.cardTop{
+    top:200px;
+    left:-650px;
+    bottom:25px
+}
+.cardBottom{
+    top:440px;
+    left:-750px;
+    bottom:-25px
+}
+.cardTop1{
+      top:200px;
+    left:-50px;
+    bottom:25px
+}
+.cardBottom1{
+      top:440px;
+    left:-150px;
+    bottom:-25px
+}
+.cardTop2{
+      top:200px;
+    left:600px;
+    bottom:25px
+}
+.cardBottom2{
+      top:440px;
+    left:500px;
+    bottom:-25px
+}
+
+.homePosition{
+     fill: #FD0004;
+     position:absolute;
+    width: 50px;
+    max-height: 50px;
+    min-height: 50px;
+    margin:auto;
+     top:120px;
+    left:910px;
+}
