@@ -68,6 +68,7 @@ function Header() {
                 { name: t.nav.formacion, path: "/Servicios#formacion" },
                 { name: t.nav.embalajes, path: "/Servicios#embalajes" },
                 { name: t.nav.etiquetas, path: "/Servicios#etiquetas" },
+                { name: t.nav.nuestroProceso, path: "/Servicios#nuestro-proceso" },
             ]
         },
         {
@@ -88,6 +89,17 @@ function Header() {
             });
         }
     };
+
+    // Smooth scroll to hash when navigating between routes
+    useEffect(() => {
+        if (typeof window !== "undefined" && window.location.hash) {
+            const hash = window.location.hash.replace("#", "");
+            const timer = setTimeout(() => {
+                scrollToHash(hash);
+            }, 120);
+            return () => clearTimeout(timer);
+        }
+    }, [pathname]);
 
     const handleMainClick = (e: React.MouseEvent<HTMLAnchorElement>, targetPath: string) => {
         setIsDrawerOpen(false);

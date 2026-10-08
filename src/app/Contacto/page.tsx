@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { BsTelephone, BsEnvelope, BsGeoAlt, BsSend, BsCheckCircleFill, BsExclamationTriangleFill } from "react-icons/bs";
+import { BsTelephone, BsEnvelope, BsGeoAlt, BsSend, BsCheckCircleFill } from "react-icons/bs";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+
   const [formData, setFormData] = useState({
     nombre: "",
     empresa: "",
@@ -14,7 +17,6 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -26,7 +28,6 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setErrorMsg("");
 
     try {
       const fd = new FormData();
@@ -47,12 +48,10 @@ export default function ContactPage() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        // Fallback via Mailto if endpoint returns non-200
         triggerMailtoFallback();
         setSubmitted(true);
       }
-    } catch (err) {
-      // Fallback via Mailto if network fails
+    } catch {
       triggerMailtoFallback();
       setSubmitted(true);
     } finally {
@@ -74,9 +73,9 @@ export default function ContactPage() {
         {/* Section Header */}
         <div className="mx-auto mb-5 max-w-2xl text-center">
           <div className="mb-2 red-line-accent" />
-          <h2 className="mb-2 font-serif text-dark display-6 fw-bold">Contáctanos</h2>
+          <h2 className="mb-2 font-serif text-dark display-6 fw-bold">{t.contactoPage.title}</h2>
           <p className="text-secondary fs-6">
-            ¿Tenés dudas o necesitás un presupuesto personalizado para el embalaje y logística de tu empresa? Escribinos directamente.
+            {t.contactoPage.subtitle}
           </p>
         </div>
 
@@ -89,8 +88,8 @@ export default function ContactPage() {
                   <BsTelephone className="text-itsma-red fs-4" />
                 </div>
                 <div>
-                  <h6 className="mb-1 text-dark fw-bold">Teléfono / WhatsApp</h6>
-                  <p className="mb-0 text-secondary">+54 11 9999-9999</p>
+                  <h6 className="mb-1 text-dark fw-bold">{t.contactoPage.phoneLabel}</h6>
+                  <p className="mb-0 text-secondary">{t.contactoPage.phoneValue}</p>
                 </div>
               </div>
 
@@ -99,9 +98,9 @@ export default function ContactPage() {
                   <BsEnvelope className="text-itsma-red fs-4" />
                 </div>
                 <div>
-                  <h6 className="mb-1 text-dark fw-bold">Correo Electrónico Directo</h6>
-                  <a href="mailto:itsma.dgr@mail.com" className="mb-0 text-itsma-red text-decoration-none fw-medium">
-                    itsma.dgr@mail.com
+                  <h6 className="mb-1 text-dark fw-bold">{t.contactoPage.emailLabel}</h6>
+                  <a href={`mailto:${t.contactoPage.emailValue}`} className="mb-0 text-itsma-red text-decoration-none fw-medium">
+                    {t.contactoPage.emailValue}
                   </a>
                 </div>
               </div>
@@ -111,8 +110,8 @@ export default function ContactPage() {
                   <BsGeoAlt className="text-itsma-red fs-4" />
                 </div>
                 <div>
-                  <h6 className="mb-1 text-dark fw-bold">Oficinas Centrales</h6>
-                  <p className="mb-0 text-secondary">Av. Córdoba 873 5° A (entre Suipacha y Esmeralda), CABA</p>
+                  <h6 className="mb-1 text-dark fw-bold">{t.contactoPage.officeLabel}</h6>
+                  <p className="mb-0 text-secondary">{t.contactoPage.officeAddress}</p>
                 </div>
               </div>
             </div>
@@ -121,14 +120,14 @@ export default function ContactPage() {
           {/* Right Column: Styled Form Card */}
           <div className="col-lg-7">
             <div className="p-4 p-md-5 itsma-red-card-nh">
-              <h4 className="mb-4 font-serif text-dark fw-bold">Envíanos tu consulta</h4>
+              <h4 className="mb-4 font-serif text-dark fw-bold">{t.contactoPage.formTitle}</h4>
 
               {submitted ? (
                 <div className="bg-light my-3 p-4 border border-success-subtle rounded-4 text-center">
                   <BsCheckCircleFill className="mb-3 text-success display-4" />
-                  <h5 className="mb-2 text-dark fw-bold">¡Mensaje enviado con éxito!</h5>
+                  <h5 className="mb-2 text-dark fw-bold">{t.contactoPage.successTitle}</h5>
                   <p className="mb-3 text-secondary">
-                    Tu consulta ha sido enviada a <strong>itsma.dgr@mail.com</strong>. Te responderemos a la brevedad.
+                    {t.contactoPage.successDesc}
                   </p>
                   <button
                     onClick={() => {
@@ -137,70 +136,70 @@ export default function ContactPage() {
                     }}
                     className="px-4 rounded-pill btn-outline-danger btn btn-sm"
                   >
-                    Enviar otra consulta
+                    {t.contactoPage.sendAnother}
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="row g-3">
                   <div className="col-md-6">
-                    <label className="text-dark form-label fw-semibold small">Nombre y Apellido *</label>
+                    <label className="text-dark form-label fw-semibold small">{t.contactoPage.nameLabel}</label>
                     <input
                       type="text"
                       name="nombre"
                       value={formData.nombre}
                       onChange={handleChange}
                       className="bg-light border-light form-control form-control-lg fs-6"
-                      placeholder="Ej: Juan Pérez"
+                      placeholder={t.contactoPage.namePlaceholder}
                       required
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-dark form-label fw-semibold small">Empresa</label>
+                    <label className="text-dark form-label fw-semibold small">{t.contactoPage.companyLabel}</label>
                     <input
                       type="text"
                       name="empresa"
                       value={formData.empresa}
                       onChange={handleChange}
                       className="bg-light border-light form-control form-control-lg fs-6"
-                      placeholder="Ej: Logística S.A."
+                      placeholder={t.contactoPage.companyPlaceholder}
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-dark form-label fw-semibold small">Email Corporativo *</label>
+                    <label className="text-dark form-label fw-semibold small">{t.contactoPage.emailFormLabel}</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       className="bg-light border-light form-control form-control-lg fs-6"
-                      placeholder="correo@empresa.com"
+                      placeholder={t.contactoPage.emailPlaceholder}
                       required
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-dark form-label fw-semibold small">Teléfono / WhatsApp</label>
+                    <label className="text-dark form-label fw-semibold small">{t.contactoPage.phoneFormLabel}</label>
                     <input
                       type="tel"
                       name="telefono"
                       value={formData.telefono}
                       onChange={handleChange}
                       className="bg-light border-light form-control form-control-lg fs-6"
-                      placeholder="+54 11 ..."
+                      placeholder={t.contactoPage.phonePlaceholder}
                     />
                   </div>
 
                   <div className="col-12">
-                    <label className="text-dark form-label fw-semibold small">Mensaje / Consulta *</label>
+                    <label className="text-dark form-label fw-semibold small">{t.contactoPage.messageLabel}</label>
                     <textarea
                       rows={4}
                       name="mensaje"
                       value={formData.mensaje}
                       onChange={handleChange}
                       className="bg-light border-light form-control fs-6"
-                      placeholder="Cuéntanos tus necesidades de embalaje o transporte multimodal..."
+                      placeholder={t.contactoPage.messagePlaceholder}
                       required
                     />
                   </div>
@@ -215,12 +214,12 @@ export default function ContactPage() {
                       {isSubmitting ? (
                         <>
                           <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
-                          Enviando consulta...
+                          {t.contactoPage.sendingButton}
                         </>
                       ) : (
                         <>
                           <BsSend />
-                          Enviar Consulta
+                          {t.contactoPage.sendButton}
                         </>
                       )}
                     </button>

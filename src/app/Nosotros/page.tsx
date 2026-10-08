@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/components/hero/Hero"
 import styles from "./page.module.css"
 import Valores from "@/components/valores/Valores"
@@ -7,100 +9,94 @@ import Certification from "@/components/certification/Certification"
 import fernando from "@/../assets/owners photos/Fernando De Chiano.webp"
 import marcelo from "@/../assets/owners photos/Marcelo Ricci.webp"
 import natalia from "@/../assets/owners photos/Natalia Soledad Arata.webp"
+import alberto from "@/../assets/owners photos/Luis Alberto Pascucci.webp"
 import catamp from "@/../assets/certifications photos/catamp.webp"
 import iata from "@/../assets/certifications photos/iata.webp"
 import icao from "@/../assets/certifications photos/icao.webp"
 import prefectura from "@/../assets/certifications photos/prefectura.webp"
-import alberto from "@/../assets/owners photos/Luis Alberto Pascucci.webp"
-function Nosotros() {
-    const values = [
-        { title: "Mision", text: "Transformar la complejidad de la gestión de mercancías peligrosas en operaciones más seguras, eficientes y confiables, involucrándonos en la realidad de cada empresa, comprendiendo sus desafíos y desarrollando soluciones a medida." },
-        { title: "Valor", text: "Consolidar a ITSMA como referente en soluciones integrales para la gestión de mercancías peligrosas, creando valor para nuestros clientes a través de soluciones a medida, innovación, conocimiento y acompañamiento cercano, y construyendo una empresa con capacidad de crecimiento y liderazgo regional." },
-        { title: "Vision", text: "Ser la empresa referente en Latinoamérica en soluciones integrales para la gestión de mercancías peligrosas, reconocida por la capacidad de comprender cada operación, transformar los  desafíos en soluciones impulsando el crecimiento y la evolución de nuestros clientes, estableciendo un nuevo estándar de excelencia en la industria." }
-    ]
+import { useLanguage } from "@/context/LanguageContext"
 
-    const owners = [
-        {
-            img: natalia.src,
-            name: "Natalia Soledad Arata",
-            title: "CEO & Directora General | Fundadora de ITSMA",
-            description: "Responsable de la dirección estratégica, crecimiento y posicionamiento de ITSMA, liderando su visión y desarrollo integral."
-        },
-        {
-            img: fernando.src,
-            name: "Fernando De Chiano",
-            title: "Gerente de Desarrollo Comercial y Relaciones Estratégicas",
-            description: "Responsable del desarrollo comercial, generación de nuevas oportunidades de negocio, vinculación estratégica y expansión de ITSMA en nuevos mercados."
-        },
-        {
-            img: marcelo.src,
-            name: "Marcelo Ricci",
-            title: "Director de Consultoría y Transformación Operativa",
-            description: "Responsable del desarrollo y liderazgo de las soluciones de consultoría, optimización de procesos y metodología Lean de ITSMA."
-        },
-        {
-            img: alberto.src,
-            name: "Luis Alberto Pascucci",
-            title: "Responsable de Learning & Development",
-            description: "Formando a los mejores especialistas en mercancías peligrosas. Docente con mas de 40 años de experiencia."
-        },
-    ]
+function Nosotros() {
+    const { t } = useLanguage()
+
+    const ownerImages = [natalia.src, fernando.src, marcelo.src, alberto.src]
+    const owners = t.nosotrosPage.owners.map((person, idx) => ({
+        ...person,
+        img: ownerImages[idx] || natalia.src,
+    }))
+
     const certifications = [
         {
             url: catamp.src,
-            title: "catamp"
+            title: "CATAMP"
         },
         {
             url: iata.src,
-            title: "iata"
+            title: "IATA"
         },
         {
             url: icao.src,
-            title: "icao"
+            title: "ICAO"
         },
         {
             url: prefectura.src,
-            title: "prefectura"
+            title: "Prefectura Naval"
         },
-
     ]
-    return (
-        <section className="mt-3 pt-5">
 
-            <Hero url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" title="Ayudando a empresas" subtitle="en su distribución" />
+    return (
+        <section className="p-0 m-0">
+            <Hero 
+                url="https://www.groups3.com/new/wp-content/uploads/2022/09/embalajes-logistica-1.jpg" 
+                title={t.nosotrosPage.heroTitle} 
+                subtitle={t.nosotrosPage.heroSubtitle} 
+            />
             <div id="mision-vision" className="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-around gap-3 py-4">
-                {values.map((value) => <Valores key={value.title} title={value.title} text={value.text} />)}
+                {t.nosotrosPage.values.map((value) => (
+                    <Valores key={value.title} title={value.title} text={value.text} />
+                ))}
             </div>
 
             <div id="integrantes">
                 {owners.map((person, i) => {
-                    const left = (i % 2) == 0
+                    const left = (i % 2) === 0
                     return (
-                        <OwnerCard key={person.name} img={person.img} name={person.name} title={person.title} description={person.description} left={left} />)
+                        <OwnerCard 
+                            key={person.name} 
+                            img={person.img} 
+                            name={person.name} 
+                            title={person.title} 
+                            description={person.description} 
+                            left={left} 
+                        />
+                    )
                 })}
             </div>
+
             <div id="como-lo-hacemos" className="d-flex flex-column gap-3 pt-5">
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
-                    <b className="fs-3">¿Como lo hacemos?</b>
-                    <p className={`py-5  text-secondary text-center fs-6 ${styles.pSize}`}>
-                        No adaptamos tu operación a una solución. Diseñamos la solución para tu operación.
+                    <b className="fs-3">{t.nosotrosPage.howWeDoIt.title}</b>
+                    <p className={`py-5 text-secondary text-center fs-6 ${styles.pSize}`}>
+                        {t.nosotrosPage.howWeDoIt.p1}
                         <br />
                         <br />
-                        Analizamos cada necesidad y desarrollamos una propuesta exclusiva, integral y a medida, que reúne todo lo que necesitás para gestionar Mercancías Peligrosas: documentación, embalajes, seguros, capacitación y asesoramiento.
+                        {t.nosotrosPage.howWeDoIt.p2}
                         <br />
                         <br />
-                        <span>Una solución única. Todo resuelto.</span>
+                        <span>{t.nosotrosPage.howWeDoIt.p3}</span>
                     </p>
                 </div>
             </div>
+
             <div id="certificaciones" className="d-flex flex-column gap-3 py-5">
                 <Divider />
                 <div className="d-flex flex-column align-items-center justify-content-center">
-                    <b className="fs-3">Certificaciones y más </b>
+                    <b className="fs-3">{t.nosotrosPage.certificationsTitle}</b>
                     <div className="d-flex flex-column flex-md-row align-items-start justify-content-around w-100">
-                        {certifications.map((certif) => <Certification key={certif.title} url={certif.url} title={certif.title} />)}
-
+                        {certifications.map((certif) => (
+                            <Certification key={certif.title} url={certif.url} title={certif.title} />
+                        ))}
                     </div>
                 </div>
             </div>

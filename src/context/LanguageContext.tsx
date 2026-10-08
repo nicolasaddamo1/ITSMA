@@ -24,6 +24,7 @@ export interface Translations {
     formacion: string;
     embalajes: string;
     etiquetas: string;
+    nuestroProceso: string;
   };
   hero: {
     title: string;
@@ -77,9 +78,59 @@ export interface Translations {
     address: string;
     copyright: string;
   };
-  contactPage?: {
+  nosotrosPage: {
+    heroTitle: string;
+    heroSubtitle: string;
+    values: {
+      title: string;
+      text: string;
+    }[];
+    owners: {
+      name: string;
+      title: string;
+      description: string;
+    }[];
+    howWeDoIt: {
+      title: string;
+      p1: string;
+      p2: string;
+      p3: string;
+    };
+    certificationsTitle: string;
+  };
+  serviciosPage: {
+    heroTitle: string;
+    heroSubtitle: string;
+    title: string;
+    processTitle: string;
+    processSubtitle: string;
+  };
+  contactoPage: {
+    badge: string;
     title: string;
     subtitle: string;
+    phoneLabel: string;
+    phoneValue: string;
+    emailLabel: string;
+    emailValue: string;
+    officeLabel: string;
+    officeAddress: string;
+    formTitle: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    companyLabel: string;
+    companyPlaceholder: string;
+    emailFormLabel: string;
+    emailPlaceholder: string;
+    phoneFormLabel: string;
+    phonePlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    sendButton: string;
+    sendingButton: string;
+    successTitle: string;
+    successDesc: string;
+    sendAnother: string;
   };
 }
 
@@ -104,6 +155,7 @@ const translationsData: Record<Language, Translations> = {
       formacion: "Formación desde el inicio",
       embalajes: "Embalajes 4G homologados",
       etiquetas: "Etiquetas y Marcas",
+      nuestroProceso: "Nuestro Proceso",
     },
     hero: {
       title: "SOLUCIONES INTEGRALES",
@@ -279,6 +331,87 @@ const translationsData: Record<Language, Translations> = {
       address: "Av. Córdoba 873 5° A (entre Suipacha y Esmeralda), CABA",
       copyright: "© 2025 ITSMA Soluciones Integrales. Todos los derechos reservados.",
     },
+    nosotrosPage: {
+      heroTitle: "AYUDANDO A EMPRESAS",
+      heroSubtitle: "en su distribución",
+      values: [
+        {
+          title: "Misión",
+          text: "Transformar la complejidad de la gestión de mercancías peligrosas en operaciones más seguras, eficientes y confiables, involucrándonos en la realidad de cada empresa, comprendiendo sus desafíos y desarrollando soluciones a medida.",
+        },
+        {
+          title: "Valor",
+          text: "Consolidar a ITSMA como referente en soluciones integrales para la gestión de mercancías peligrosas, creando valor para nuestros clientes a través de soluciones a medida, innovación, conocimiento y acompañamiento cercano, y construyendo una empresa con capacidad de crecimiento y liderazgo regional.",
+        },
+        {
+          title: "Visión",
+          text: "Ser la empresa referente en Latinoamérica en soluciones integrales para la gestión de mercancías peligrosas, reconocida por la capacidad de comprender cada operación, transformar los desafíos en soluciones impulsando el crecimiento y la evolución de nuestros clientes, estableciendo un nuevo estándar de excelencia en la industria.",
+        },
+      ],
+      owners: [
+        {
+          name: "Natalia Soledad Arata",
+          title: "CEO & Directora General | Fundadora de ITSMA",
+          description: "Responsable de la dirección estratégica, crecimiento y posicionamiento de ITSMA, liderando su visión y desarrollo integral.",
+        },
+        {
+          name: "Fernando De Chiano",
+          title: "Gerente de Desarrollo Comercial y Relaciones Estratégicas",
+          description: "Responsable del desarrollo comercial, generación de nuevas oportunidades de negocio, vinculación estratégica y expansión de ITSMA en nuevos mercados.",
+        },
+        {
+          name: "Marcelo Ricci",
+          title: "Director de Consultoría y Transformación Operativa",
+          description: "Responsable del desarrollo y liderazgo de las soluciones de consultoría, optimización de procesos y metodología Lean de ITSMA.",
+        },
+        {
+          name: "Luis Alberto Pascucci",
+          title: "Responsable de Learning & Development",
+          description: "Formando a los mejores especialistas en mercancías peligrosas. Docente con más de 40 años de experiencia.",
+        },
+      ],
+      howWeDoIt: {
+        title: "¿Cómo lo hacemos?",
+        p1: "No adaptamos tu operación a una solución. Diseñamos la solución para tu operación.",
+        p2: "Analizamos cada necesidad y desarrollamos una propuesta exclusiva, integral y a medida, que reúne todo lo que necesitás para gestionar Mercancías Peligrosas: documentación, embalajes, seguros, capacitación y asesoramiento.",
+        p3: "Una solución única. Todo resuelto.",
+      },
+      certificationsTitle: "Certificaciones y más",
+    },
+    serviciosPage: {
+      heroTitle: "ACOMPAÑANDO A EMPRESAS",
+      heroSubtitle: "en su distribución",
+      title: "Servicios que ofrecemos",
+      processTitle: "Nuestro proceso",
+      processSubtitle: "dentro de ITSMA",
+    },
+    contactoPage: {
+      badge: "Hablemos",
+      title: "Contáctanos",
+      subtitle: "¿Tenés dudas o necesitás un presupuesto personalizado para el embalaje y logística de tu empresa? Escribinos directamente.",
+      phoneLabel: "Teléfono / WhatsApp",
+      phoneValue: "+54 11 9999-9999",
+      emailLabel: "Correo Electrónico Directo",
+      emailValue: "itsma.dgr@mail.com",
+      officeLabel: "Oficinas Centrales",
+      officeAddress: "Av. Córdoba 873 5° A (entre Suipacha y Esmeralda), CABA",
+      formTitle: "Envíanos tu consulta",
+      nameLabel: "Nombre y Apellido *",
+      namePlaceholder: "Ej: Juan Pérez",
+      companyLabel: "Empresa",
+      companyPlaceholder: "Ej: Logística S.A.",
+      emailFormLabel: "Email Corporativo *",
+      emailPlaceholder: "correo@empresa.com",
+      phoneFormLabel: "Teléfono / WhatsApp",
+      phonePlaceholder: "+54 11 ...",
+      messageLabel: "Mensaje / Consulta *",
+      messagePlaceholder: "Cuéntanos tus necesidades de embalaje o transporte multimodal...",
+      sendButton: "Enviar Consulta",
+      sendingButton: "Enviando consulta...",
+      successTitle: "¡Mensaje enviado con éxito!",
+      successDesc: "Tu consulta ha sido enviada a itsma.dgr@mail.com. Te responderemos a la brevedad.",
+      sendAnother: "Enviar otra consulta",
+    },
   },
   en: {
     nav: {
@@ -300,6 +433,7 @@ const translationsData: Record<Language, Translations> = {
       formacion: "Training from Scratch",
       embalajes: "Approved 4G Packaging",
       etiquetas: "Labels & Markings",
+      nuestroProceso: "Our Process",
     },
     hero: {
       title: "COMPREHENSIVE SOLUTIONS",
@@ -474,6 +608,87 @@ const translationsData: Record<Language, Translations> = {
       addressTitle: "Address",
       address: "Av. Córdoba 873 5° A (between Suipacha & Esmeralda), CABA, Argentina",
       copyright: "© 2025 ITSMA Integrated Solutions. All rights reserved.",
+    },
+    nosotrosPage: {
+      heroTitle: "HELPING COMPANIES",
+      heroSubtitle: "in their distribution",
+      values: [
+        {
+          title: "Mission",
+          text: "Transforming the complexity of dangerous goods management into safer, more efficient, and reliable operations, getting involved in the reality of each company, understanding its challenges, and developing tailored solutions.",
+        },
+        {
+          title: "Value",
+          text: "Consolidating ITSMA as a benchmark in comprehensive solutions for dangerous goods management, creating value for our clients through tailored solutions, innovation, knowledge, and close guidance, and building a company with growth capacity and regional leadership.",
+        },
+        {
+          title: "Vision",
+          text: "To be the leading company in Latin America in comprehensive solutions for dangerous goods management, recognized for the ability to understand every operation, transform challenges into solutions driving our clients' growth and evolution, setting a new standard of excellence in the industry.",
+        },
+      ],
+      owners: [
+        {
+          name: "Natalia Soledad Arata",
+          title: "CEO & Managing Director | Founder of ITSMA",
+          description: "Responsible for strategic direction, growth, and positioning of ITSMA, leading its vision and comprehensive development.",
+        },
+        {
+          name: "Fernando De Chiano",
+          title: "Commercial Development & Strategic Relations Manager",
+          description: "Responsible for commercial development, generating new business opportunities, strategic partnerships, and ITSMA's expansion into new markets.",
+        },
+        {
+          name: "Marcelo Ricci",
+          title: "Director of Consulting & Operational Transformation",
+          description: "Responsible for the development and leadership of consulting solutions, process optimization, and Lean methodology at ITSMA.",
+        },
+        {
+          name: "Luis Alberto Pascucci",
+          title: "Head of Learning & Development",
+          description: "Training the finest specialists in dangerous goods. Educator with more than 40 years of experience.",
+        },
+      ],
+      howWeDoIt: {
+        title: "How do we do it?",
+        p1: "We do not fit your operation into a solution. We design the solution for your operation.",
+        p2: "We analyze every need and develop an exclusive, comprehensive, and tailored proposal that brings together everything you need to manage Dangerous Goods: documentation, packaging, insurance, training, and advisory.",
+        p3: "A single solution. Everything resolved.",
+      },
+      certificationsTitle: "Certifications and more",
+    },
+    serviciosPage: {
+      heroTitle: "ACCOMPANYING COMPANIES",
+      heroSubtitle: "in their distribution",
+      title: "Services we offer",
+      processTitle: "Our process",
+      processSubtitle: "within ITSMA",
+    },
+    contactoPage: {
+      badge: "Let's Talk",
+      title: "Contact Us",
+      subtitle: "Have questions or need a customized quote for your company's packaging and logistics? Contact us directly.",
+      phoneLabel: "Phone / WhatsApp",
+      phoneValue: "+54 11 9999-9999",
+      emailLabel: "Direct Email",
+      emailValue: "itsma.dgr@mail.com",
+      officeLabel: "Headquarters",
+      officeAddress: "Av. Córdoba 873 5° A (between Suipacha & Esmeralda), CABA, Argentina",
+      formTitle: "Send us your inquiry",
+      nameLabel: "Full Name *",
+      namePlaceholder: "e.g.: John Doe",
+      companyLabel: "Company",
+      companyPlaceholder: "e.g.: Logistics Corp",
+      emailFormLabel: "Corporate Email *",
+      emailPlaceholder: "name@company.com",
+      phoneFormLabel: "Phone / WhatsApp",
+      phonePlaceholder: "+54 11 ...",
+      messageLabel: "Message / Inquiry *",
+      messagePlaceholder: "Tell us about your packaging or multimodal transport needs...",
+      sendButton: "Send Inquiry",
+      sendingButton: "Sending inquiry...",
+      successTitle: "Message sent successfully!",
+      successDesc: "Your inquiry has been sent to itsma.dgr@mail.com. We will get back to you shortly.",
+      sendAnother: "Send another inquiry",
     },
   },
 };
