@@ -2,13 +2,13 @@
 
 import React from 'react'
 import Icon from './svgs/icon/icon'
-import { FaLinkedin, FaTiktok } from 'react-icons/fa'
+import { FaLinkedin, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
 function Footer() {
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
 
     const links = [
         { name: t.nav.inicio, path: "/" },
@@ -46,16 +46,45 @@ function Footer() {
                         <li className="mb-2 nav-item">
                             <a href="mailto:itsma.dgr@gmail.com" className="text-body-secondary text-decoration-none">itsma.dgr@gmail.com</a>
                         </li>
-                        <li className="d-flex gap-4 mb-2 nav-item">
+                        <li className="d-flex flex-wrap gap-3 mb-3 nav-item align-items-center">
                             <a href="" className='bg-light shadow p-2 rounded-circle link-body-emphasis'>
-                                <FaLinkedin size={25} />
+                                <FaLinkedin size={22} />
                             </a>
                             <a href="" className='bg-light shadow p-2 rounded-circle link-body-emphasis'>
-                                <FaTiktok size={25} />
+                                <FaTiktok size={22} />
                             </a>
                             <a href="https://www.instagram.com/itsma.solucionesintegrales/" target="_blank" rel="noopener noreferrer" className='bg-light shadow p-2 rounded-circle link-body-emphasis' title="Instagram @itsma.solucionesintegrales">
-                                <RiInstagramFill size={25} />
+                                <RiInstagramFill size={22} />
                             </a>
+                            <a href="https://wa.me/message/GTOP6TCUZS6BO1?src=qr" target="_blank" rel="noopener noreferrer" className='bg-light shadow p-2 rounded-circle link-body-emphasis' title="WhatsApp ITSMA">
+                                <FaWhatsapp size={22} color="#25D366" />
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <div className="d-flex flex-column align-items-start">
+                                <a 
+                                    href="https://wa.me/message/GTOP6TCUZS6BO1?src=qr" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="d-inline-block text-decoration-none"
+                                    title="Escanear o hacer clic para chatear por WhatsApp"
+                                >
+                                    <img 
+                                        src="/images/whatsapp_qr.webp" 
+                                        alt="WhatsApp ITSMA Soluciones Integrales QR" 
+                                        className="rounded-3 shadow-sm border border-secondary-subtle"
+                                        style={{ 
+                                            width: "125px", 
+                                            height: "125px", 
+                                            objectFit: "cover",
+                                            display: "block" 
+                                        }}
+                                    />
+                                </a>
+                                <span className="text-secondary small mt-1" style={{ fontSize: "0.75rem" }}>
+                                    {language === "en" ? "Scan or click to chat" : "Escaneá o tocá para chatear"}
+                                </span>
+                            </div>
                         </li>
                     </ul>
                 </div>
