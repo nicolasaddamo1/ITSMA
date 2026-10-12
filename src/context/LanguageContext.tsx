@@ -390,7 +390,7 @@ const translationsData: Record<Language, Translations> = {
       title: "Contáctanos",
       subtitle: "¿Tenés dudas o necesitás un presupuesto personalizado para el embalaje y logística de tu empresa? Escribinos directamente.",
       phoneLabel: "Teléfono / WhatsApp",
-      phoneValue: "+54 11 9999-9999",
+      phoneValue: "+54 11 4147-2084",
       emailLabel: "Correo Electrónico Directo",
       emailValue: "itsma.dgr@mail.com",
       officeLabel: "Oficinas Centrales",
