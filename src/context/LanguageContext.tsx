@@ -668,7 +668,7 @@ const translationsData: Record<Language, Translations> = {
       title: "Contact Us",
       subtitle: "Have questions or need a customized quote for your company's packaging and logistics? Contact us directly.",
       phoneLabel: "Phone / WhatsApp",
-      phoneValue: "+54 11 9999-9999",
+      phoneValue: "+54 11 4147-2084",
       emailLabel: "Direct Email",
       emailValue: "itsma.dgr@mail.com",
       officeLabel: "Headquarters",
@@ -701,7 +701,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType>({
   language: "es",
-  setLanguage: () => {},
+  setLanguage: () => { },
   t: translationsData.es,
 });
 
