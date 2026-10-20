@@ -46,7 +46,7 @@ export default function AboutSection() {
             <div className="position-relative rounded-4 overflow-hidden shadow-lg">
               <img
                 src="/images/itsma_service_consulting.jpg"
-                alt="Operaciones ITSMA"
+                alt="Acondicionamiento y gestión técnica de mercancías peligrosas DGR - ITSMA"
                 className="w-100 h-100 object-fit-cover"
                 style={{ maxHeight: "380px" }}
               />

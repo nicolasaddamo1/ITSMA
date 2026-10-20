@@ -79,18 +79,18 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/icon-512.png",
-        width: 512,
-        height: 512,
-        alt: "ITSMA Soluciones Integrales en Mercancías Peligrosas",
+        url: "/images/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "ITSMA Soluciones Integrales en Mercancías Peligrosas (DGR / MERPEL / MM PP)",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "ITSMA | Mercancías Peligrosas (DGR / MERPEL / MM PP)",
     description: "Soluciones integrales para la gestión y transporte de mercancías peligrosas (DGR / MERPEL / MM PP).",
-    images: ["/icon-512.png"],
+    images: ["/images/og-banner.png"],
   },
 };
 
